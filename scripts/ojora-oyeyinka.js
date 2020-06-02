@@ -4,7 +4,7 @@ const language = "JavaScript";
 
 
 const hngProfile=()=>{
-    return `Hello World, this is ${fullname} with HNGi7 ID ${hng_id} using ${language} for stage 2 task.`;
+    return `Hello World, this is ${fullname} with HNGi7 ID ${hng_id} using ${language} for stage 2 task`;
 }
 
 console.log(hngProfile());
