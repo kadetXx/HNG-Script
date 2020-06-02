@@ -59,7 +59,7 @@ ob_end_flush();
                 $color = $out[1] == 'Pass' ? 'green' : 'red';
                 echo <<<EOL
                 <li>
-                Name: $out[2] - Message: $out[0] - Status: <span style="color:$color">$out[1]</span>
+                Name: $out[2] - Status: <span style="color:$color">$out[1]</span>
                 </li>
 EOL;
             }
