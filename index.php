@@ -28,7 +28,7 @@ foreach ($files as $file) {
 
     $f = exec($startScript . " scripts/" . $file);
 
-    $data[$extension[0]]->content = $f;
+    @$data[$extension[0]]->content = $f;
     $data[$extension[0]]->status = testFileContent($f);
     $data[$extension[0]]->name = $extension[0];
     $output[] = [$f, testFileContent($f), $extension[0]];
