@@ -1,0 +1,1 @@
+console.log("Hello World, this is Edikan Ukpong with HNGi7 ID HNG-03228 using Javascript for stage 2 task")
