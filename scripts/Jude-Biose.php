@@ -1,18 +1,16 @@
 <?php
 
-header("Content-Type: application/json");
-
     $fName  = "Jude";
     $lName = "Biose";
-    $HNGi7_ID = "HNG-01207";
+    $HNG_ID = "HNG-01207";
     $language = "PHP";
 
-    $location_vars = "Hello World, this is "
-                      .$fName. " " .$lName.
-                      " with HNGi7 ID "
-                      .$HNGi7_ID. " using " .$language. 
-                      " for stage 2 task.";
+    $full_text = 'Hello World, this is '
+                      .$fName. ' ' .$lName.
+                      ' with HNGi7 ID '
+                      .$HNG_ID. ' using ' .$language. 
+                      ' for stage 2 task.';
 
-    $result = ($location_vars);
+    $result = $full_text;
 
     print_r($result);
