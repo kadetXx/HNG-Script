@@ -22,7 +22,7 @@
             echo "Hello World, this is "
                 .$this->fName. " " .$this->lName. 
                 " with HNGi7 ID " .$this->HNG_ID. " using " 
-                .$this->language. " for stage 2 task.";
+                .$this->language. " for stage 2 task. </br>";
         
         }
 
