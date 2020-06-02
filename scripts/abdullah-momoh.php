@@ -11,4 +11,4 @@
   }
 
   $me = new _MUser();
-  print $me->output();
+  print $me->output() . "\n";
