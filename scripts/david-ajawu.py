@@ -1,6 +1,3 @@
-full_name = 'David Ajawu'
-hng_id = 'HNG-04265'
-language = 'Python'
-
-print('Hello World, this is', full_name, 'with HNGi7 ID ', hng_id, 'using',
-      language, 'for stage 2 task')
+if __name__ == '__main__':
+    print('Hello World, this is {0} with HNGi7 ID {1} using {2} for stage 2 task'\
+    	  .format('David Ajawu', 'HNG-04265', 'python'))
