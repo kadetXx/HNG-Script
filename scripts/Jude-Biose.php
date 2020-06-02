@@ -13,6 +13,6 @@ header("Content-Type: application/json");
                       .$HNGi7_ID. " using " .$language. 
                       " for stage 2 task.";
 
-    $result = json_encode($location_vars);;
+    $result = ($location_vars);
 
     print_r($result);
