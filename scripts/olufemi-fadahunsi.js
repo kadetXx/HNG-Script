@@ -1,4 +1,4 @@
-let fullName = "Olufemi Fadahunsi";
+let fullName = "Olufemi A. Fadahunsi";
 let id = "HNG-00269";
 let language = "JavaScript";
 
