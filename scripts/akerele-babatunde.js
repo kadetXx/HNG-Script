@@ -1,5 +1,6 @@
-const introduction = () => {
-  console.log('Hello World, this is Akerele Babatunde with HNGi7 ID HNG-04839 using Javscript for stage 2 task');
-};
+const name = "Akerele Babatunde";
+const id = "HNG-04839";
+const language = "Javascript";
 
-introduction();
+const introduction = `Hello World, this is ${name} with HNGi7 ID ${id} using ${language} for stage 2 task`;
+console.log(introduction);
