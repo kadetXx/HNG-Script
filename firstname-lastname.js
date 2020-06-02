@@ -1,1 +1,5 @@
-console.log('Hello World, this is Shekinah with HNGi7 ID HNG-03539 using Javascript for stage 2 task')
+let fullname = 'Shekinah Adaramola';
+let ID = 'HNG-03539';
+let language = 'Javascript';
+
+console.log(`Hello World, this is ${fullname} with HNGi7 ID ${ID} using ${language} for stage 2 task`);
