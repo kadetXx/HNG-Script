@@ -11,7 +11,6 @@ $output = [];
 $outputJSON = [];
 $passes = 0;
 $fails = 0;
-
 foreach ($files as $file) {
 
     $extension = explode('.', $file);
@@ -25,6 +24,11 @@ foreach ($files as $file) {
             break;
         case 'py':
             $startScript = "python";
+            break;
+        case 'java':
+            $startScript = "java";
+
+            $f = exec("javac scripts/" . $file);
             break;
     }
 
