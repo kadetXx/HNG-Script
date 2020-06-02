@@ -7,4 +7,5 @@ const language = 'Javascript';
 const hngProfile = function () {
     return `Hello World, this is ${fullName} with HNGi7 ID ${hngId} using ${language} for stage 2 task`
 }
+
 console.log(hngProfile());
