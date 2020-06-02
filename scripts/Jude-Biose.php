@@ -1,16 +1,31 @@
 <?php
+    
+    class HelloWorld {
 
-    $fName  = "Jude";
-    $lName = "Biose";
-    $HNG_ID = "HNG-01207";
-    $language = "PHP";
+        private $fName;
+        private $lName;
+        private $HNG_ID;
+        private $language;
 
-    $full_text = 'Hello World, this is '
-                      .$fName. ' ' .$lName.
-                      ' with HNGi7 ID '
-                      .$HNG_ID. ' using ' .$language. 
-                      ' for stage 2 task.';
+        function __construct($fName, $lName, $HNG_ID, $language) {
 
-    $result = $full_text;
+            $this->fName = $fName;
+            $this->lName = $lName;
+            $this->HNG_ID = $HNG_ID;
+            $this->language = $language;
+            $this->customize_print();
 
-    print_r($result);
+        }
+
+        function customize_print() {
+
+            echo "Hello World, this is "
+                .$this->fName. " " .$this->lName. 
+                " with HNGi7 ID " .$this->HNG_ID. " using " 
+                .$this->language. " for stage 2 task.";
+        
+        }
+
+    }
+
+    $obj = new HelloWorld('Jude', 'Biose', 'HNG-01207', 'PHP');
