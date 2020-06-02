@@ -5,6 +5,6 @@ id = "HNG-04957"
 language = "python"
 
 print(
-    f"Hello world, This is {name } with HNGi7 {id} using {language} for stage 2 task."
+    f"Hello World, This is {name } with HNGi7 {id} using {language} for stage 2 task"
 )
 
