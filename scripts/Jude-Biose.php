@@ -1,18 +1,31 @@
 <?php
+    
+    class HelloWorld {
 
-header("Content-Type: application/json");
+        private $fName;
+        private $lName;
+        private $HNG_ID;
+        private $language;
 
-    $fName  = "Jude";
-    $lName = "Biose";
-    $HNGi7_ID = "HNG-01207";
-    $language = "PHP";
+        function __construct($fName, $lName, $HNG_ID, $language) {
 
-    $location_vars = "Hello World, this is "
-                      .$fName. " " .$lName.
-                      " with HNGi7 ID "
-                      .$HNGi7_ID. " using " .$language. 
-                      " for stage 2 task.";
+            $this->fName = $fName;
+            $this->lName = $lName;
+            $this->HNG_ID = $HNG_ID;
+            $this->language = $language;
+            $this->customize_print();
 
-    $result = ($location_vars);
+        }
 
-    print_r($result);
+        function customize_print() {
+
+            echo "Hello World, this is "
+                .$this->fName. " " .$this->lName. 
+                " with HNGi7 ID " .$this->HNG_ID. " using " 
+                .$this->language. " for stage 2 task. </br>";
+        
+        }
+
+    }
+
+    $obj = new HelloWorld('Jude', 'Biose', 'HNG-01207', 'PHP');
