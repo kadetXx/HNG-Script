@@ -31,11 +31,9 @@ foreach ($files as $file) {
     $data[$extension[0]]->content = $f;
     $data[$extension[0]]->status = testFileContent($f);
     $data[$extension[0]]->name = $extension[0];
-    // $intern[$extension[0]] = $data;
-    array_push($outputJSON,$data);
-    // $output;
     $output[] = [$f, testFileContent($f), $extension[0]];
 }
+$outputJSON = $data;
 
 function testFileContent($string)
 {
