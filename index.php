@@ -9,6 +9,8 @@ unset($files[0]);
 unset($files[1]);
 $output = [];
 $outputJSON = [];
+$passes = 0;
+$fails = 0;
 foreach ($files as $file) {
 
     $extension = explode('.', $file);
@@ -49,6 +51,15 @@ function testFileContent($string)
     return 'Fail';
 }
 
+foreach($output as $val) {
+    if ($val[1] == 'Pass') {
+        $passes++;
+    } elseif ($val[1] == 'Fail') {
+        $fails++;
+    }
+
+}
+
 ob_end_flush();
 
 if (isset($json) && $json == 'json') {
@@ -60,6 +71,10 @@ if (isset($json) && $json == 'json') {
 
     <body>
         <h1>Format</h1>
+        <div>
+            <h2 style="color:green">Pass:</h2> <span><?php echo($passes)  ?></span>  
+            <h2 style="color:red">Fail:</h2> <span><?php  echo($fails) ?></span>
+        </div>
         <ul>
 
             <?php
@@ -68,7 +83,7 @@ if (isset($json) && $json == 'json') {
                 $color = $out[1] == 'Pass' ? 'green' : 'red';
                 echo <<<EOL
                 <li>
-                Text: $out[2] - Status: <span style="color:$color">$out[1]</span>
+                Name: $out[2] - Message: $out[0] - Status: <span style="color:$color">$out[1]</span>
                 </li>
 EOL;
             }
