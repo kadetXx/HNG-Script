@@ -1,8 +1,1 @@
-const Name = 'Ibironke Marvellous';
-const hngId = 'HNG-03297';
-const language = 'Javascript';
-
-const Profile = function () {
-    return `Hello World, this is ${Name} with HNGi7 ID ${hngId} using ${language}`
-}
-Profile();
+console.log("Hello World, this is Ibironke Marvellous with HNGi7 ID HNG-03297 using JavaScript for stage 2 task");
