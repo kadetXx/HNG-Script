@@ -1,6 +1,10 @@
 
 <?php
+$firstname = "Promise" ;
+$secondname = "Nwanozie" ;
+$id = "HNG-03590";
+$language = "PHP" ;
 
-echo("Hello world, this is Nwanozie Promise Eberechukwu with HNGi7 ID HNG-03590 using php for stage 2 task ") ;
+echo("Hello world, this is {$firstname} {$secondname}  with HNGi7 ID {$id} using {$language} for stage 2 task ") ;
 
 ?>
