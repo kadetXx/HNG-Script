@@ -1,1 +1,1 @@
-console.log('Hello world!, my name is Damilola Oseni with HNGi7 ID HNG00746 using Javascript for stage 2 task ')
+console.log('Hello World, this is Damilola Oseni with HNGi7 ID HNG-00746 using Javascript for stage 2 task ')

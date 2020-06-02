@@ -1,1 +1,2 @@
-print("Hello, World!, this is Erondu Ugonna, with HNGi7 ID HNG-00761 using Python for Stage 2 task")
+introduction = "Hello World!, this is Ugonna Erondu with HNGi7 ID HNG-00761 using Python for Stage 2 task"
+print(introduction)
