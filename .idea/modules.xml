@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HNG-Script.iml" filepath="$PROJECT_DIR$/.idea/HNG-Script.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../farmsponsor/.idea/farmsponsor.iml" filepath="$PROJECT_DIR$/../farmsponsor/.idea/farmsponsor.iml" />
     </modules>
   </component>
 </project>

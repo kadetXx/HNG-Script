@@ -33,7 +33,7 @@ foreach($files as $file){
 }
 
 function testFileContent($string){
-    if(preg_match('/^Hello World, this is (([a-zA-Z]+?\s)+)with HNGi7 ID (HNG-[0-9]{5}) using ([a-zA-Z]+?) for stage 2 task$/',trim($string))){
+    if(preg_match('/^Hello\sWorld[,|.|!]*\sthis\sis\s[a-zA-Z]{2,}\s[a-zA-Z]{2,}(\s[a-zA-Z]{2,})?\swith\sHNGi7\sID\s(HNG-\d{3,})\susing\s[a-zA-Z]{3,}\sfor\sstage\s2\stask.?$/i',trim($string))){
         return 'Pass';
     }
 
@@ -56,9 +56,10 @@ ob_end_flush();
             <?php
 
             foreach ($output as $out){
+                $color = $out[1] == 'Pass' ? 'green' : 'red';
                 echo <<<EOL
                 <li>
-                Text: $out[2] - Status: $out[1]
+                Text: $out[2] - Status: <span style="color:$color">$out[1]</span>
                 </li>
 EOL;
             }
