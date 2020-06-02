@@ -11,7 +11,6 @@ $output = [];
 $outputJSON = [];
 $passes = 0;
 $fails = 0;
-
 foreach ($files as $file) {
 
     $extension = explode('.', $file);
@@ -19,17 +18,23 @@ foreach ($files as $file) {
     switch ($extension[1]) {
         case 'php':
             $startScript = "php";
+            $f = exec($startScript . " scripts/" . $file);
             break;
         case 'js':
             $startScript = "node";
+            $f = exec($startScript . " scripts/" . $file);
             break;
         case 'py':
             $startScript = "python";
+            $f = exec($startScript . " scripts/" . $file);
+            break;
+        case 'java':
+            $startScript = "javac";
+            // $f = 
+            exec($startScript . " scripts/" . $file);
+            $f = exec("java scripts/" . $file);
             break;
     }
-
-    $f = exec($startScript . " scripts/" . $file);
-
     $data[$extension[0]]->content = $f;
     $data[$extension[0]]->status = testFileContent($f);
     $data[$extension[0]]->name = $extension[0];
