@@ -1,6 +1,9 @@
 
-name = 'Samuel Bamgbose'
+fullname = 'Samuel Bamgbose'
 ID = 'HNG-00339'
-language = 'Python'
+dev_language = 'Python'
 
-print('Hello World, this is', name,'with HNGi7 ID',ID,'using',language,'for stage 2 task')
+def main():
+    print('Hello World, this is', fullname,'with HNGi7 ID',ID,'using',dev_language,'for stage 2 task')
+
+main()
