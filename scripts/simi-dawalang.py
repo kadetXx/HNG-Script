@@ -2,7 +2,8 @@ full_name = "Simi Morayo Da-Walang"
 hng_ID = "HNG-04578" 
 
 """since zero is the first digit, it is best to save it as string.
-Otherwise, it will be omitted by the interpreter"""
+Otherwise, it will be omitted by the interpreter, also the it will
+make sure there is no space between 0 and the hyphen."""
 
 lang = "Python"
 
