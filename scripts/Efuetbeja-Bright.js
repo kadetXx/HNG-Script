@@ -1,4 +1,4 @@
-const Name = "EFUETBEJA BRIGHT";
+const Name = "Efuetbeja Bright";
 const ID = "HNG-00907";
 var Language = "JavaScript"
 
