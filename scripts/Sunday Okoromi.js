@@ -5,4 +5,4 @@ let profile = {firstName: "Sunday", lastName:"Okoromi", hngId: "HNG-03987", lang
 
 }; 
 
-profile.fullName();
+console.log(profile.fullName());
