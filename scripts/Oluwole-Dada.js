@@ -1,4 +1,4 @@
-const name = 'Oluwole Dada';
+const fullName = 'Oluwole Dada';
 const hngId = 'HNG-03623';
 const email = 'dadaoluwafemitaiwo@gmail.com';
 const language = 'JavaScript';
