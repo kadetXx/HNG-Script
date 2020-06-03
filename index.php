@@ -67,12 +67,9 @@ foreach ($output as $val) {
 }
 
 if (isset($json) && $json == 'json') {
-
     echo json_encode($outputJSON);
 } else {
-
     ?>
-
     <html>
 
     <head>
@@ -126,9 +123,7 @@ if (isset($json) && $json == 'json') {
             </tr>
             </thead>
             <tbody>
-
             <?php
-
             $row = 0;
             foreach ($output as $out) {
 
@@ -161,7 +156,6 @@ if (isset($json) && $json == 'json') {
                 sleep(1); //used this to test the buffering
 
             }
-
             ?>
 
             </tbody>
@@ -173,8 +167,7 @@ if (isset($json) && $json == 'json') {
     </body>
 
     </html>
-    
     <?php
 }
 
-?> 
+?>
