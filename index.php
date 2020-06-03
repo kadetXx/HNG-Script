@@ -44,22 +44,15 @@ foreach ($files as $file) {
 
     $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
     $regexReturn  = testFileContent($f);
-//    @$data[]->content = $newString;
-//    @$data[]->status = $regexReturn[0];
-//    @$data[]->name = str_replace('-',' ',$extension[0]);
-//    @$data[]->email = trim(getEmailFromFileContent($f));
-//    @$data[]->file = $file;
-//    @$data[]->HNGID = $regexReturn[1];
-//    @$data[]->language = $regexReturn[2];
 
     $data[] = [
-            'content' => $newString,
-            'status' => $regexReturn[0],
-            'name' => str_replace('-',' ',$extension[0]),
-            'email' => trim(getEmailFromFileContent($f)),
             'file' => $file,
-            'HNGID' => $regexReturn[1],
-            'language' => $regexReturn[2]
+            'output' => $newString,
+            'name' => str_replace('-',' ',$extension[0]),
+            'id' => $regexReturn[1],
+            'email' => trim(getEmailFromFileContent($f)),
+            'language' => $regexReturn[2],
+            'status' => $regexReturn[0],
         ];
     @$output[] = [$newString, testFileContent($f), str_replace('-',' ',$extension[0]), trim(getEmailFromFileContent($f))];
 }
@@ -90,7 +83,7 @@ foreach ($output as $val) {
 }
 
 if (isset($json) && $json == 'json') {
-
+    header('Content-type: application/json');
     echo json_encode($outputJSON);
 } else {
     ?>
@@ -149,7 +142,7 @@ if (isset($json) && $json == 'json') {
             </thead>
             <tbody>
             <?php
-            $row = 0;
+            $row = 1;
             foreach ($output as $out) {
 
                 $status = $out[1][0] == 'Pass' ? 1 : 0;

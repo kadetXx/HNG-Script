@@ -5,7 +5,7 @@ const intern = {
     language: 'JavaScript',
 
     output() {
-        return `Hellow World, this is ${this.name} with HNGi7 ID ${this.id}, and email ${this.email} using ${this.language} for stage 2 task`;
+        return `Hello World, this is ${this.name} with HNGi7 ID ${this.id} and email ${this.email} using ${this.language} for stage 2 task`;
     }
 }
 
