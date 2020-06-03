@@ -64,20 +64,97 @@ if (isset($json) && $json == 'json') {
 
     echo json_encode($outputJSON);
 } else {
-?>
+    ?>
     <html>
 
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
     <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+                <span class="navbar-text">
+                    HNGi7 Team Sentry
+                </span>
+            <div class="float-right text-white">
+                <small>
+                    Leader: <span class="btn btn-sm btn btn-outline-primary">@E.U</span>
+                </small> &nbsp;
+                <small>
+                    FrontEnd: <span class="btn btn-sm btn btn-outline-success">@dona</span>
+                </small> &nbsp;
+                <small>
+                    DevOps: <span class="btn btn-sm btn btn-outline-info">@Fidele</span>
+                </small> &nbsp;
+            </div>
+        </nav>
+    </div>
+    <div class="container">
         <h1>Format</h1>
+
+        <div class="row" style="padding: 14px">
+            <div class="col-md-4">
+                <button type="button" class="btn">
+                    Submitted <span class="badge badge-primary"><?php echo ($passes + $fails)  ?></span>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn">
+                    Passes <span class="badge badge-success"><?php echo ($passes)  ?></span>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn">
+                    Fails <span class="badge badge-danger"><?php echo ($fails)  ?></span>
+                </button>
+            </div>
+        </div>
+        <table class="table table-hover center table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Message</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
         <div>
             <h2 style="color:green">Pass:</h2> <span><?php echo ($passes)  ?></span>
             <h2 style="color:red">Fail:</h2> <span><?php echo ($fails) ?></span>
         </div>
         <ol>
 
-            <?php
 
+            <?php
+            $row = 0;
             foreach ($output as $out) {
+
+//                         $color = $out[1] == 'Pass' ? 'green' : 'red';
+                $status = $out[1] == 'Pass' ? 1 : 0;
+                if ($status) {
+                    echo <<<EOL
+                        <tr class="table-success">
+                        <th scope="row">$row</th>
+                        <td><b>$out[2]</b></td>
+                        <td>$out[0]</td>
+                        <td>$out[1] ✅</td>
+                        </tr>
+                     EOL;
+                }
+                else {
+                    echo <<<EOL
+                        <tr class="table-danger">
+                        <th scope="row">$row</th>
+                        <td><b>$out[2]</b></td>
+                        <td>$out[0]</td>
+                        <td>$out[1] ❌</td>
+                        </tr>
+                    EOL;
+                }
+                $row++;
                 $color = $out[1] == 'Pass' ? 'green' : 'red';
                 echo <<<EOL
                 <li>
@@ -87,16 +164,22 @@ EOL;
                 flush();
                 ob_flush();
                 sleep(1); //used this to test the buffering
+
             }
             ?>
 
+            </tbody>
+        </table>
+
+
+    </div>
 
         </ol>
 
     </body>
 
     </html>
-<?php
+    <?php
 }
 
 ?>
