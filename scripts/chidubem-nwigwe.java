@@ -1,5 +1,5 @@
 public class ChidubemNwigwe {
     public static void main(String[] args) {
-        System.out.println("Hello, my name is Chidubem Nwigwe\nMy HNGi7 ID is HNG-00259\nI will be using Java for the stage 2 task");
+        System.out.println("Hello World, this is Chidubem Nwigwe with HNGi7 ID HNG-00259 using Java for stage 2 task");
     }
 }
