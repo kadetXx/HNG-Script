@@ -2,7 +2,7 @@ const fullName = 'Uchechukwu Nwafor';
 
 const id = 'HNG-03041';
 
-const email = 'nwaforuchechukwu2007@gmail.com'
+const email = 'nwaforuchechukwu2007@gmail.com';
 
 const language = 'Javascript';
 
