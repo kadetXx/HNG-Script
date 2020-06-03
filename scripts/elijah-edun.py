@@ -1,7 +1,9 @@
+fullname = 'Elijah Edun'
+hngId= 'HNG-02781'
+language= 'Python'
+email= 'edunelijah18@gmail.com'
 
-=======
-#-*-coding:utf8;-*-
-#qpy:3
-#qpy:console
-
-print("Hello World, this is Elijah Edun with HNGi7 ID HNG-02781 using python for stage 2 task")
+def hngProfile():
+    return f"Hello World, this is {fullname} with HNGi7 ID {hngId} and email is {email} using {language} for stage 2 task"
+    
+print(hngProfile())
