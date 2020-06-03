@@ -5,7 +5,7 @@ function MoveToStage2(name, id, language, email) {
   );
 }
 
-const karen = MoveToStage2(
+MoveToStage2(
   "Efereyan Karen Simisola",
   "HNG-01050",
   "Javascript",
