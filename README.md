@@ -22,6 +22,8 @@ Dart programmers must have dart install on the local machine for testing.
 
 visit https://dart.dev/get-dart to install dart on your local machine.
 
+PHP must be of version 7.3 and above
+
 # RESULT:
 
 This will show a list of all executed scripts and the status.
