@@ -1,7 +1,9 @@
 {
 	let me = {
     firstName: "Abdullahi",
-    lastName: "Aliyu"    
+    lastName: "Aliyu",
+	HNGID: 	01827,
+	email: "abdoulfurya@gmail.com"
 }
-console.log("My name is " + me.firstName +  " "+ me.lastName)
+console.log("Hello World, this is  " + me.firstName +  " "+ me.lastName + " with HNGi7 ID HNG-"+ me.HNGID + " using javascript for stage 2 task"   )
 }
