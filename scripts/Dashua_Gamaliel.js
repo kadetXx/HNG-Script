@@ -1,2 +1,2 @@
-let myDetails = { full_name: 'Dashua Gamaliel Chinkidda', hng_id: 'HNG-02186', scripting_lang:'JavaScript', email: 'gdashua29@gmail.com'};
-console.log("Hello World, this is "+ myDetails.full_name + " with HNGi7 ID "+ myDetails.hng_id + " and email "+myDetails.email+" using " + myDetails.scripting_lang + " for stage 2 task");
+let MarleyByte = 'Hello World, this is Dashua Gamaliel Chinkidda with HNGi7 ID HNG-02186 and email gdashua29@gmail.com using JavaScript for stage 2 task';
+console.log(MarleyByte);
