@@ -1,0 +1,1 @@
+console.log("Hello world, this is Fasakin Ayomide with HNGi7 ID HNG-01996 using javaScript for stage 2 task")
