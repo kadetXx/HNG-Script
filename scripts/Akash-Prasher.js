@@ -2,7 +2,8 @@ let myDetails = () => {
     let myFirstName = "Akash";
     let myLastName = "Prasher";
     let myHNGID = "HNG-06260";
-    console.log(`Hello World, this is ${myFirstName} ${myLastName} with HNGi7 ID ${myHNGID} using JavaScript for stage 2 task`);
+    let myEmail = "17bcs2419@cuchd.in"
+    console.log(`Hello World, this is ${myFirstName} ${myLastName} with HNGi7 ID ${myHNGID} and email ${myEmail} using JavaScript for stage 2 task`);
 };
 
 myDetails();
