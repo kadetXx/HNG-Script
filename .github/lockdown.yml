@@ -27,8 +27,8 @@ lock: true
 #   label: wontfix
 
 # pulls:
-   comment: >
-     This repository does not accept pull requests, see the README for details.
+#   comment: >
+#    This repository does not accept pull requests, see the README for details.
 #   lock: false
 
 # Repository to extend settings from
