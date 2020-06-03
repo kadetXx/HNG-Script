@@ -43,12 +43,14 @@ foreach ($files as $file) {
     $f = exec($startScript . " scripts/" . $file);
 
     $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
-
+    $regexReturn  = testFileContent($f);
     @$data[$extension[0]]->content = $newString;
-    $data[$extension[0]]->status = testFileContent($f);
+    $data[$extension[0]]->status = $regexReturn[0];
     $data[$extension[0]]->name = str_replace('-',' ',$extension[0]);
-    $data[$extension[0]]->email = getEmailFromFileContent($f);
+    $data[$extension[0]]->email = trim(getEmailFromFileContent($f));
     $data[$extension[0]]->file = $file;
+    $data[$extension[0]]->HNGID = $regexReturn[1];
+    $data[$extension[0]]->language = $regexReturn[2];
     $output[] = [$newString, testFileContent($f), $extension[0], $data[$extension[0]]->email];
 
 }
@@ -56,11 +58,11 @@ $outputJSON = $data;
 
 function testFileContent($string)
 {
-    if (preg_match('/^Hello\sWorld[,|.|!]*\sthis\sis\s([a-zA-Z|-]{2,}\s){1,6}with\sHNGi7\sID\s(HNG-\d{3,})\sand\semail\s{1,3}(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))\s{1,3}using\s[a-zA-Z|#]{2,}\sfor\sstage\s2\stask.?$/i', trim($string))) {
-        return 'Pass';
+    if (preg_match('/^Hello\sWorld[,|.|!]*\sthis\sis\s([a-zA-Z|-]{2,}\s){1,6}with\sHNGi7\sID\s(HNG-\d{3,})\sand\semail\s{1,3}(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))\s{1,3}using\s([a-zA-Z|#]{2,})\sfor\sstage\s2\stask.?$/i', trim($string), $values)) {
+        return ['Pass',$values[2],$values[7]];
     }
 
-    return 'Fail';
+    return ['Fail',null,null];
 }
 
 function getEmailFromFileContent($string)
@@ -79,6 +81,7 @@ foreach ($output as $val) {
 }
 
 if (isset($json) && $json == 'json') {
+
     echo json_encode($outputJSON);
 } else {
     ?>
