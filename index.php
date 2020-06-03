@@ -61,7 +61,7 @@ foreach ($files as $file) {
             'HNGID' => $regexReturn[1],
             'language' => $regexReturn[2]
         ];
-    @$output[] = [$newString, testFileContent($f), $extension[0], $data[$extension[0]]->email];
+    @$output[] = [$newString, testFileContent($f), str_replace('-',' ',$extension[0]), trim(getEmailFromFileContent($f))];
 }
 $outputJSON = $data;
 
@@ -155,7 +155,8 @@ if (isset($json) && $json == 'json') {
                 $status = $out[1][0] == 'Pass' ? 1 : 0;
                 $email = 'No Email';
                 $statuses = $out[1][0];
-                if(isset($out[3])){
+
+                if(isset($out[3]) && !empty($out[3])){
                     $email = $out[3];
                 }
                 if ($status) {
