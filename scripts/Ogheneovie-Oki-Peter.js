@@ -12,4 +12,4 @@ function showProps(myName, myID, myEmail, myLang) {
   }
 
  
-  console.log (showProps(name, ID, lang, email));
+  console.log (showProps(name, ID, email, lang));
