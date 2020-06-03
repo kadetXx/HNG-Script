@@ -1,4 +1,4 @@
-const fullName = "Opeyemi Peter
+const fullName = "Opeyemi Peter"
 const ID = "HNG-01612";
 const language = "Javascript";
 
