@@ -6,8 +6,10 @@ $files = scandir("scripts/");
 
 unset($files[0]);
 unset($files[1]);
+unset($files[2]);
 $output = [];
 $outputJSON = [];
+$data = [];
 $passes = 0;
 $fails = 0;
 foreach ($files as $file) {
@@ -32,24 +34,40 @@ foreach ($files as $file) {
 
             exec("javac scripts/" . $file);
             break;
+
+        default:
+            $startScript = "php";
+            break;
     }
 
     $f = exec($startScript . " scripts/" . $file);
 
-    $data[$extension[0]]->content = $f;
+    $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
+
+    @$data[$extension[0]]->content = $newString;
     $data[$extension[0]]->status = testFileContent($f);
-    $data[$extension[0]]->name = $extension[0];
-    $output[] = [$f, testFileContent($f), $extension[0]];
+    $data[$extension[0]]->name = str_replace('-',' ',$extension[0]);
+    $data[$extension[0]]->email = getEmailFromFileContent($f);
+    $data[$extension[0]]->file = $file;
+    $output[] = [$newString, testFileContent($f), $extension[0], $data[$extension[0]]->email];
+
 }
 $outputJSON = $data;
 
 function testFileContent($string)
 {
-    if (preg_match('/^Hello\sWorld[,|.|!]?\sthis\sis\s[a-zA-Z]{2,}\s[a-zA-Z]{2,}(\s[a-zA-Z]{2,})?\swith\sHNGi7\sID\s(HNG-\d{3,})\susing\s[a-zA-Z|#]{2,}\sfor\sstage\s2\stask.?$/i', trim($string))) {
+    if (preg_match('/^Hello\sWorld[,|.|!]*\sthis\sis\s([a-zA-Z|-]{2,}\s){1,6}with\sHNGi7\sID\s(HNG-\d{3,})\sand\semail\s{1,3}(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))\s{1,3}using\s[a-zA-Z|#]{2,}\sfor\sstage\s2\stask.?$/i', trim($string))) {
         return 'Pass';
     }
 
     return 'Fail';
+}
+
+function getEmailFromFileContent($string)
+{
+    preg_match('/\s?(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))/i', trim($string) , $matches, PREG_OFFSET_CAPTURE);
+
+    return @$matches[0][0];
 }
 
 foreach ($output as $val) {
@@ -61,7 +79,6 @@ foreach ($output as $val) {
 }
 
 if (isset($json) && $json == 'json') {
-
     echo json_encode($outputJSON);
 } else {
     ?>
@@ -91,9 +108,7 @@ if (isset($json) && $json == 'json') {
         </nav>
     </div>
     <div class="container">
-        <h1>Format</h1>
-
-        <div class="row" style="padding: 14px">
+        <div class="row" style="padding: 6em 0" class="text-center">
             <div class="col-md-4">
                 <button type="button" class="btn">
                     Submitted <span class="badge badge-primary"><?php echo ($passes + $fails)  ?></span>
@@ -116,53 +131,51 @@ if (isset($json) && $json == 'json') {
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Message</th>
+                <th scope="col">Email</th>
                 <th scope="col">Status</th>
             </tr>
             </thead>
             <tbody>
-
-        <div>
-            <h2 style="color:green">Pass:</h2> <span><?php echo ($passes)  ?></span>
-            <h2 style="color:red">Fail:</h2> <span><?php echo ($fails) ?></span>
-        </div>
-        <ol>
-
-
             <?php
             $row = 0;
             foreach ($output as $out) {
 
-//                         $color = $out[1] == 'Pass' ? 'green' : 'red';
                 $status = $out[1] == 'Pass' ? 1 : 0;
+                $email = 'No Email';
+                if(isset($out[3])){
+                    $email = $out[3];
+                }
                 if ($status) {
                     echo <<<EOL
-                        <tr class="table-success">
-                        <th scope="row">$row</th>
-                        <td><b>$out[2]</b></td>
-                        <td>$out[0]</td>
-                        <td>$out[1] ✅</td>
-                        </tr>
-                     EOL;
+                                <tr class="table-success">
+                                <th scope="row">$row</th>
+                                <td><b>$out[2]</b></td>
+                                <td>$out[0]</td>
+                                <td>
+                                    $email
+                                </td>
+                                <td>$out[1] ✅</td>
+                                </tr>
+                             EOL;
                 }
                 else {
                     echo <<<EOL
-                        <tr class="table-danger">
-                        <th scope="row">$row</th>
-                        <td><b>$out[2]</b></td>
-                        <td>$out[0]</td>
-                        <td>$out[1] ❌</td>
-                        </tr>
-                    EOL;
+                                <tr class="table-danger">
+                                <th scope="row">$row</th>
+                                <td><b>$out[2]</b></td>
+                                <td>$out[0]</td>
+                                <td>
+                                    $email
+                                </td>
+                                <td>$out[1] ❌</td>
+                                </tr>
+                            EOL;
                 }
                 $row++;
-                $color = $out[1] == 'Pass' ? 'green' : 'red';
-                echo <<<EOL
-                <li>
-                Name: $out[2] - Message: $out[0] - Status: <span style="color:$color">$out[1]</span>
-                </li>
-EOL;
+
                 flush();
                 ob_flush();
+
                 sleep(1); //used this to test the buffering
 
             }
@@ -173,8 +186,6 @@ EOL;
 
 
     </div>
-
-        </ol>
 
     </body>
 
