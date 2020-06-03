@@ -16,7 +16,7 @@ foreach ($files as $file) {
 
     $extension = explode('.', $file);
 
-    switch ($extension[1]) {
+    switch (@$extension[1]) {
         case 'php':
             $startScript = "php";
             break;
@@ -52,7 +52,6 @@ foreach ($files as $file) {
     $data[$extension[0]]->HNGID = $regexReturn[1];
     $data[$extension[0]]->language = $regexReturn[2];
     $output[] = [$newString, testFileContent($f), $extension[0], $data[$extension[0]]->email];
-
 }
 $outputJSON = $data;
 
@@ -143,8 +142,9 @@ if (isset($json) && $json == 'json') {
             $row = 0;
             foreach ($output as $out) {
 
-                $status = $out[1] == 'Pass' ? 1 : 0;
+                $status = $out[1][0] == 'Pass' ? 1 : 0;
                 $email = 'No Email';
+                $statuses = $out[1][0];
                 if(isset($out[3])){
                     $email = $out[3];
                 }
@@ -157,7 +157,7 @@ if (isset($json) && $json == 'json') {
                                 <td>
                                     $email
                                 </td>
-                                <td>$out[1] ✅</td>
+                                <td>$statuses ✅</td>
                                 </tr>
                              EOL;
                 }
@@ -170,7 +170,7 @@ if (isset($json) && $json == 'json') {
                                 <td>
                                     $email
                                 </td>
-                                <td>$out[1] ❌</td>
+                                <td>$statuses ❌</td>
                                 </tr>
                             EOL;
                 }
@@ -178,8 +178,6 @@ if (isset($json) && $json == 'json') {
 
                 flush();
                 ob_flush();
-
-                sleep(1); //used this to test the buffering
 
             }
             ?>
