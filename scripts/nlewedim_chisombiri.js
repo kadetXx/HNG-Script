@@ -1,17 +1,10 @@
 //calling my variables using es6
 //Nlewedim Chisombiri first task
 
-let output = () => {
-   const hng = {
-      firstName: "Chisombiri",
-      lastName: "Nlewedim",
-      hngID: "HNG-01454",
-      language: "Javascript",
-      email: "chisombiri@gmail.com"
-   }
-   return `Hello World, this is ${hng.firstName} ${hng.lastName} with HNGi7 ID ${hng.hngID} using ${hng.language} for stage 2 task. ${hng.email}`
+hng = (name, id, language, email) => {
+   console.log(`Hello World, this is ${name} with HNGi7 ID ${id} and email ${email} using ${language} for stage 2 task`)
 }
 
-console.log(output());
+hng("Nlewedim Chisombiri", "HNG-01454", "JavaScript", "chisombiri@gmail.com")
 
 //return 
