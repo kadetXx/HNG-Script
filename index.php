@@ -6,6 +6,7 @@ $files = scandir("scripts/");
 
 unset($files[0]);
 unset($files[1]);
+unset($files[2]);
 $output = [];
 $outputJSON = [];
 $data = [];
@@ -41,9 +42,9 @@ foreach ($files as $file) {
 
     $f = exec($startScript . " scripts/" . $file);
 
-    $data[]->content = $f;
-    $data[]->status = testFileContent($f);
-    $data[]->name = $extension[0];
+    @$data[$extension[0]]->content = $f;
+    $data[$extension[0]]->status = testFileContent($f);
+    $data[$extension[0]]->name = $extension[0];
     $output[] = [$f, testFileContent($f), $extension[0]];
 }
 $outputJSON = $data;
@@ -57,13 +58,13 @@ function testFileContent($string)
     return 'Fail';
 }
 
-//foreach ($output as $val) {
-//    if ($val[1] == 'Pass') {
-//        $passes++;
-//    } elseif ($val[1] == 'Fail') {
-//        $fails++;
-//    }
-//}
+foreach ($output as $val) {
+    if ($val[1] == 'Pass') {
+        $passes++;
+    } elseif ($val[1] == 'Fail') {
+        $fails++;
+    }
+}
 
 if (isset($json) && $json == 'json') {
 
@@ -96,9 +97,7 @@ if (isset($json) && $json == 'json') {
         </nav>
     </div>
     <div class="container">
-        <h1>Format</h1>
-
-        <div class="row" style="padding: 14px">
+        <div class="row" style="padding: 6em 0" class="text-center">
             <div class="col-md-4">
                 <button type="button" class="btn">
                     Submitted <span class="badge badge-primary"><?php echo ($passes + $fails)  ?></span>
@@ -125,51 +124,37 @@ if (isset($json) && $json == 'json') {
             </tr>
             </thead>
             <tbody>
-
-        <div>
-            <h2 style="color:green">Pass:</h2> <span><?php echo ($passes)  ?></span>
-            <h2 style="color:red">Fail:</h2> <span><?php echo ($fails) ?></span>
-        </div>
-        <ol>
-
-
             <?php
             $row = 0;
             foreach ($output as $out) {
 
-//                         $color = $out[1] == 'Pass' ? 'green' : 'red';
                 $status = $out[1] == 'Pass' ? 1 : 0;
                 if ($status) {
                     echo <<<EOL
-                        <tr class="table-success">
-                        <th scope="row">$row</th>
-                        <td><b>$out[2]</b></td>
-                        <td>$out[0]</td>
-                        <td>$out[1] ✅</td>
-                        </tr>
-                     EOL;
+                                <tr class="table-success">
+                                <th scope="row">$row</th>
+                                <td><b>$out[2]</b></td>
+                                <td>$out[0]</td>
+                                <td>$out[1] ✅</td>
+                                </tr>
+                             EOL;
                 }
                 else {
                     echo <<<EOL
-                        <tr class="table-danger">
-                        <th scope="row">$row</th>
-                        <td><b>$out[2]</b></td>
-                        <td>$out[0]</td>
-                        <td>$out[1] ❌</td>
-                        </tr>
-                    EOL;
+                                <tr class="table-danger">
+                                <th scope="row">$row</th>
+                                <td><b>$out[2]</b></td>
+                                <td>$out[0]</td>
+                                <td>$out[1] ❌</td>
+                                </tr>
+                            EOL;
                 }
                 $row++;
-                $color = $out[1] == 'Pass' ? 'green' : 'red';
-                echo <<<EOL
-                <li>
-                Name: $out[2] - Message: $out[0] - Status: <span style="color:$color">$out[1]</span>
-                </li>
-EOL;
+
                 flush();
                 ob_flush();
 
-//                sleep(1); //used this to test the buffering
+                sleep(1); //used this to test the buffering
 
             }
             ?>
@@ -179,8 +164,6 @@ EOL;
 
 
     </div>
-
-        </ol>
 
     </body>
 
