@@ -1,10 +1,9 @@
-full_name = "Simi Morayo Da-Walang"
-hng_ID = "HNG-04578" 
-
-"""since zero is the first digit, it is best to save it as string.
-Otherwise, it will be omitted by the interpreter, also it will
-ensure there is no space between 0 and the hyphen."""
-
-language = "Python"
-
-print("Hello World, this is",full_name,"with HNGi7 ID",hng_ID,"using",language,"for stage 2 task.")
+def HNG_task2():
+  str = 'Hello World, this is {} with HNGi7 ID HNG-{} and email {} using {} for stage 2 task.'.format("Simi Morayo Da-Walang", "04578", "simidawalang@gmail.com", "Python")
+  print(str)
+  
+"""The ID No. was used as a string
+because 0 is the first digit, otherwise
+it would not have shown in the output."""
+  
+HNG_task2()
