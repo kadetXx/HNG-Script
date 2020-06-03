@@ -11,5 +11,3 @@ let hngIntern = {
 
 
 hngIntern.outputString();
-
-//Hello World, this is Elisha Simeon Ukpong Udoh with HNGi7 ID HNG-01827 and email simeon.udoh45@gmail.com using python for stage 2 task
