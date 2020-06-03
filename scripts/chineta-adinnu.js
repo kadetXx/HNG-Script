@@ -6,7 +6,7 @@ let output = {
   language: "javascript",
 };
 
-let outputLine = `Hello World, this is ${output.name} with HNGi7 ${output.hngID} using ${output.language} for stage 2 task`;
+let outputLine = `Hello World, this is ${output.name} with HNGi7 ID ${output.hngID} and email ${output.emailAddress} using ${output.language} for stage 2 task`;
 
 //console output
 console.log(outputLine);
