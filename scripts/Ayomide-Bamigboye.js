@@ -1,9 +1,7 @@
-const fullName = 'Ayomide Bamigboye';
-const hngId = 'HNG-05116';
-const language = 'Javascript';
+let fullName = 'Ayomide Bamigboye';
+let hngId = 'HNG-05116';
+let language = 'Javascript';
 
-const hngProfile = function () {
-    return `Hello World, this is ${fullName} with HNGi7 ID ${hngId} using ${language}`
-}
-hngProfile();
+console.log("Hello World, this is " + fullName + " with HNGi7 ID " + hngId+" using  " + language);
+
 

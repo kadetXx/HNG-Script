@@ -1,7 +1,11 @@
-
 <?php
+$fullname = "Temitope Japheth";
+$hngid = "HNG-04757";
+$language = "PHP";
 
-print "Hello, This is Temitope Japheth with HNGi7 ID: HNG-04757 using php for stage 2 task!";
-
+echo " Hello, This is  $fullname  ";
+echo "with HNGi7 ID: $hngid using ";
+echo $language . " ";
+echo "for stage 2 task" . "<br>";
+echo "Thank you";
 ?>
-
