@@ -10,4 +10,4 @@ function displayMessage(){
     return message;
 }
 
-console.log(displayMessage())
+console.log(displayMessage());
