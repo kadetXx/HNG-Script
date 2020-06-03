@@ -3,7 +3,7 @@ let  outPut = ()=> {
       fullName: "Gabriel Raji",
       Id: "HNG-00100",
       email: "rajigabrielebunoluwa@gmail.com",
-      Language: "Javascript/nodejs express",
+      Language: "Javascript",
       status: "Pass"
     }
   return `Hello World, this is ${profile.fullName} with HNGi7 ID ${profile.Id} and email ${[profile.email]} using ${profile.Language} for stage 2 task`;
