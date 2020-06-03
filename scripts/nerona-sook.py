@@ -5,7 +5,7 @@ def introduction():
   full_name = "Nerona Sook"
   hng_id = "HNG-00194"
   email = "neronasook@gmail.com"
-  language = "Python"
+  language = "python"
 
   print(txt.format(full_name, hng_id, email, language))
 
