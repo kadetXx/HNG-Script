@@ -3,7 +3,6 @@ const detail =  {
     id: "HNG-03262",
     email: "adepelumi1996@gmail.com",
     language: "Javascript",
-    status: "Pass",
 };
 
 (function (data){
