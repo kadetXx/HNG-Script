@@ -79,7 +79,6 @@ foreach ($output as $val) {
 }
 
 if (isset($json) && $json == 'json') {
-
     echo json_encode($outputJSON);
 } else {
     ?>
