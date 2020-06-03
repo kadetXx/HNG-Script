@@ -1,6 +1,6 @@
 <?php
 
-// This is my stage 2 task
+
 
 $name = "Temitope Japheth";
 
