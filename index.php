@@ -142,7 +142,7 @@ if (isset($json) && $json == 'json') {
             </thead>
             <tbody>
             <?php
-            $row = 0;
+            $row = 1;
             foreach ($output as $out) {
 
                 $status = $out[1][0] == 'Pass' ? 1 : 0;
