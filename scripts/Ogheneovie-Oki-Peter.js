@@ -11,5 +11,4 @@ function showProps(myName, myID, myEmail, myLang) {
     return result;
   }
 
- 
   console.log (showProps(name, ID, email, lang));
