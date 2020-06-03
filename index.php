@@ -1,6 +1,5 @@
 <?php
 
-
 $json = $_SERVER["QUERY_STRING"] ?? '';
 
 $files = scandir("scripts/");
@@ -43,7 +42,7 @@ $outputJSON = $data;
 
 function testFileContent($string)
 {
-    if (preg_match('/^Hello\sWorld[,|.|!]*\sthis\sis\s[a-zA-Z]{2,}\s[a-zA-Z]{2,}(\s[a-zA-Z]{2,})?\swith\sHNGi7\sID\s(HNG-\d{3,})\susing\s[a-zA-Z]{3,}\sfor\sstage\s2\stask.?$/i', trim($string))) {
+    if (preg_match('/^Hello\sWorld[,|.|!]?\sthis\sis\s[a-zA-Z]{2,}\s[a-zA-Z]{2,}(\s[a-zA-Z]{2,})?\swith\sHNGi7\sID\s(HNG-\d{3,})\susing\s[a-zA-Z|#]{2,}\sfor\sstage\s2\stask.?$/i', trim($string))) {
         return 'Pass';
     }
 
@@ -59,8 +58,6 @@ foreach($output as $val) {
 
 }
 
-ob_end_flush();
-
 if (isset($json) && $json == 'json') {
 
     echo json_encode($outputJSON);
@@ -71,10 +68,10 @@ if (isset($json) && $json == 'json') {
     <body>
         <h1>Format</h1>
         <div>
-            <h2 style="color:green">Pass:</h2> <span><?php echo($passes)  ?></span>  
+            <h2 style="color:green">Pass:</h2> <span><?php echo($passes)  ?></span>
             <h2 style="color:red">Fail:</h2> <span><?php  echo($fails) ?></span>
         </div>
-        <ul>
+        <ol>
 
             <?php
 
@@ -85,16 +82,19 @@ if (isset($json) && $json == 'json') {
                 Name: $out[2] - Message: $out[0] - Status: <span style="color:$color">$out[1]</span>
                 </li>
 EOL;
+                flush();
+                ob_flush();
+                sleep(1); //used this to test the buffering
             }
             ?>
 
 
-        </ul>
+        </ol>
 
     </body>
 
     </html>
 <?php
 }
-ob_start();
+
 ?>
