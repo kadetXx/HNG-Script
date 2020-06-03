@@ -1,11 +1,9 @@
 name = "Daniel Igwe"
 HNG_id = "HNG-02682"
+E_MAIL = "danielchibuzoigwe@gmail.com"
 
-
-def start():
-    print(
-        f"Hello World, this is {name} with HNGi7 ID {HNG_id} using python for stage 2 task")
-
-
-if __name__ == '__main__':
-    start()
+def generate_output():
+    return "Hello World, this is {} with HNGi7 ID {} and email {} using Python for stage 2 task".format(name, HNG_id, E_MAIL)
+    
+if __name__ == "__main__":
+    print(generate_output())

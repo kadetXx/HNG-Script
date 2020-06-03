@@ -1,8 +1,9 @@
-const Name = 'Ibironke Marvellous';
-const hngId = 'HNG-03297';
-const language = 'Javascript';
+const MarvName = "Ibironke Marvellous";
+const MarvId = "HNG-03297";
+const MarvLanguage = "JavaScript";
+const MarvEmail = "opemipo827@gmail.com"
 
-const Profile = function () {
-    return `Hello World, this is ${Name} with HNGi7 ID ${hngId} using ${language}`
-}
-Profile();
+console.log(
+  `Hello World, this is ${MarvName} with HNGi7 ID ${MarvId} and email ${MarvEmail}  using ${MarvLanguage} for stage 2 task`
+);
+

@@ -1,5 +1,11 @@
-class test {
+class AdetolaAdeyeye {
     public static void main(String[] args) {
-        System.out.println("Hello World, my name is Adeyeye Adetola, my HNGi7 ID is , HNG-00876, and i would be using java for my stage 2 task");
+
+	
+
+
+String bucky[]= {"Hello World," ," this is Adeyeye Adetola with HNGi7 ID HNG-00876 and email, adetolaisaiah17@gmail.com using Java for stage 2 task"};	
+System.out.println(bucky[0]+bucky[1]);
+
     }
 }
