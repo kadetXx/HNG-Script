@@ -1,3 +1,11 @@
 
-var details =  "Hello World, this is Mutiat Akinwale with HNGi7 ID HNG-01406 and email mutiatakinwale@gmail.com using avaScript for stage 2 task"
-console.log(details);
+stage2 = { 
+	fullName : "Mutiat Akinwale", 
+	hngID: "HNG-01406", 
+	language : "JavaScript" ,
+	email : "mutiatakinwale@gmail.com"
+	};
+	
+	var output = `Hello world, this is ${stage2.fullName} with HNGi7 ID ${stage2.hngID} and email ${stage2.email} using ${stage2.language} for Stage 2 task`;
+	
+	console.log(output);
