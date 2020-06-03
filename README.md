@@ -3,6 +3,7 @@
 This script gets all the files in the scripts folder and runs exec on it.
 
 ## Supported Languages
+
 **Javascript | PHP | Python | Java | Dart**
 
 ## TO-RUN:
