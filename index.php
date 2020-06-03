@@ -58,16 +58,10 @@ foreach ($files as $file) {
 }
 $outputJSON = $data;
 
-<<<<<<< HEAD
-function testFileContent($string){
-    if(preg_match('/^Hello World, this is (([a-zA-Z]+?\s)+) with HNGi7 ID (HNG-[0-9]{5}) using ([a-zA-Z]+?) for stage 2 task$/',trim($string))){
-        return true;
-=======
 function testFileContent($string)
 {
     if (preg_match('/^Hello\sWorld[,|.|!]*\sthis\sis\s([a-zA-Z|-]{2,}\s){1,6}with\sHNGi7\sID\s(HNG-\d{3,})\sand\semail\s{1,3}(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))\s{1,3}using\s([a-zA-Z|#]{2,})\sfor\sstage\s2\stask.?$/i', trim($string), $values)) {
         return ['Pass',$values[2],$values[7]];
->>>>>>> 132c0c38234c9c5dcc7fead2f89b185fe3b3fc0b
     }
 
     return ['Fail',null,null];
