@@ -6,7 +6,7 @@ var lang = 'JavaScript';
 function showProps(myName, myID, myEmail, myLang) {
     var result = ``;
 
-        result += (`Hello World, this is ${myName} HNGi7 ID: ${myID} with email address ${myEmail} using ${myLang} for stage 2 task`);
+        result += (`Hello World, this is ${myName} with HNGi7 ID ${myID} and email ${myEmail} using ${myLang} for stage 2 task`);
      
     return result;
   }
