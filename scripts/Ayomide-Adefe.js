@@ -1,10 +1,10 @@
 
 // variables declaration
-const fullName = "Ayomide Adefe";
+const name = "Ayomide Adefe";
 const ID       = "HNG-02441";
 const programmingLanguage = "Javascript";
-const emailAddress ="ayomideadefe@gmail.com";
+const email ="ayomideadefe@gmail.com";
 
 
 // output using string interpolation
-console.log(`Hello World, this is ${fullName} with HNGi7 ID ${ID} and email ${emailAddress} using ${programmingLanguage} for stage 2 task`);
+console.log(`Hello World, this is ${name} with HNGi7 ID ${ID} and email ${email} using ${programmingLanguage} for stage 2 task`);
