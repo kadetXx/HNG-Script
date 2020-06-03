@@ -1,6 +1,6 @@
 const fullName = 'Timfon Ekott';
 const id = 'HNG-04227';
-const userName = 'Blodhound';
+const userName = 'Bloodhound';
 const language = 'JavaScript';
 const email = 'edmund.timfon@gmail.com';
 
