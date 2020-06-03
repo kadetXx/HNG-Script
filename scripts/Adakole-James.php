@@ -28,3 +28,7 @@ $data->languageOfChoice = "PHP";
 
 $giveOut = $data->showDetails();
 print $giveOut;
+<<<<<<< HEAD
+=======
+
+>>>>>>> dac1e9caa428174f0a6a7a2382fce62e2be26990
