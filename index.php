@@ -24,16 +24,19 @@ foreach ($files as $file) {
         case 'py':
             $startScript = "python";
             break;
+        case 'dart':
+            $startScript = "dart";
+            break;
         case 'java':
             $startScript = "java";
 
-            $f = exec("javac scripts/" . $file);
+            exec("javac scripts/" . $file);
             break;
     }
 
     $f = exec($startScript . " scripts/" . $file);
 
-    @$data[$extension[0]]->content = $f;
+    $data[$extension[0]]->content = $f;
     $data[$extension[0]]->status = testFileContent($f);
     $data[$extension[0]]->name = $extension[0];
     $output[] = [$f, testFileContent($f), $extension[0]];
@@ -49,13 +52,12 @@ function testFileContent($string)
     return 'Fail';
 }
 
-foreach($output as $val) {
+foreach ($output as $val) {
     if ($val[1] == 'Pass') {
         $passes++;
     } elseif ($val[1] == 'Fail') {
         $fails++;
     }
-
 }
 
 if (isset($json) && $json == 'json') {
@@ -68,8 +70,8 @@ if (isset($json) && $json == 'json') {
     <body>
         <h1>Format</h1>
         <div>
-            <h2 style="color:green">Pass:</h2> <span><?php echo($passes)  ?></span>
-            <h2 style="color:red">Fail:</h2> <span><?php  echo($fails) ?></span>
+            <h2 style="color:green">Pass:</h2> <span><?php echo ($passes)  ?></span>
+            <h2 style="color:red">Fail:</h2> <span><?php echo ($fails) ?></span>
         </div>
         <ol>
 
