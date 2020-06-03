@@ -5,6 +5,6 @@ const fullName = `${firstName} ${lastName}`;
 const email = 'olushola.abiodun@gmail.com';
 const id = 'HNG-03204';
 const language = 'JavaScript';
-const message = `Hello World, this is ${fullName} with ${id} and email ${email} using ${language} to solve stage 2 task.`;
+const message = `Hello World, this is ${fullName} with ${id} and email ${email} using ${language} for stage 2 task.`;
 
 console.log(message);
