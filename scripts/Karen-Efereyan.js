@@ -1,4 +1,4 @@
-function MoveToStage2(name, id, language, email) {
+function MoveToStage2(name, id, email, language) {
   console.log(
     `Hello World, this is ${name} with HNG ID ${id} using ${language} and email ${email} for stage2 task`
   );
@@ -7,6 +7,6 @@ function MoveToStage2(name, id, language, email) {
 MoveToStage2(
   "Efereyan Karen Simisola",
   "HNG-01050",
-  "Javascript",
-  "kimsyefe@gmail.com"
+  "kimsyefe@gmail.com",
+  "Javascript"
 );
