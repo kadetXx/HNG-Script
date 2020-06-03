@@ -1,3 +1,5 @@
+// Task for stage 2
+
 const fullname = 'Abolade Kasope'
 const id = ': HNG-06623'
 const lang = 'Javascript'
