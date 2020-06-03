@@ -1,6 +1,7 @@
 const { createServer } = require("http")
 
-const PORT = process.PORT || 3000
+const PORT = process.env.PORT || 3000
+
 const details = {name: "Emmanuel Ikwuoma", hngID: "HNG-04940", lang: "JavaScript"}
 
 createServer((req, res) => {
