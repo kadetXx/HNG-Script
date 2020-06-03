@@ -1,0 +1,9 @@
+<?php
+
+$nm = "Nelson Chinedu";
+$lg = "PHP" ;
+$em = "nelsonnedum@gmail.com";
+$HNG_id = "";
+
+
+?>
