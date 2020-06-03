@@ -32,7 +32,8 @@ foreach ($files as $file) {
         case 'java':
             $startScript = "java";
 
-            exec("javac scripts/" . $file);
+            $file = exec("javac scripts/" . $file);
+            var_dump($file);
             break;
 
         default:
@@ -41,6 +42,7 @@ foreach ($files as $file) {
     }
 
     $f = @exec($startScript . " scripts/" . $file);
+
 
     $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
     $regexReturn  = testFileContent($f);

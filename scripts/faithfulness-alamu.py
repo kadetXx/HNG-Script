@@ -5,5 +5,5 @@ email = "vaguemail369@gmail.com"
 language = "python"
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 	print(outformat % (name, hngid, email, language))
