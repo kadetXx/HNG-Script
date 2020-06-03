@@ -1,4 +1,4 @@
-//File to complete HNG task 1 group work
+//File to complete HNG task 2 group work
 //By GAMHnile
 const GEORGE_DATA = ['George Uweh', 'HNG-01125', 'JavaScript'];
 
