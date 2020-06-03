@@ -5,7 +5,6 @@ function printStatement(){
     let email = 'chimaaniuha@gmail.com';
     let lang = 'Javascript'
     let Statement = `Hello World, This is ${firstName} ${lastName} with HNGi7 ID ${IdentificationNumber} and email ${email} using ${lang} for stage 2 task.`;
-    
     console.log(Statement);
 }
 
