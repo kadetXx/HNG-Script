@@ -1,0 +1,8 @@
+<?php
+function helloSodiq($fullname, $id, $language) {
+  echo "Hello World, this is $fullname with HNGi7 ID $id using $language for stage 2 task.<br>";
+}
+
+helloSodiq("Sodiq Oyedotun", "HNG-05622", "php");
+?>
+
