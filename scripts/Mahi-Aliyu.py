@@ -3,7 +3,7 @@
 info = {'Full_name':"Mahi Aliyu", 'HNGi7_ID':"HNG-01114",'Language':"Python"}
 
 #printing my info from the dict value
-HNG = "Hello World, this is Mahi Aminu Aliyu with HNGi7 ID HNG-01114 using Python for stage 2 task"
+HNG = "Hello World, this is Mahi Aminu Aliyu with HNGi7 ID HNG-01114 and email mahigital@gmail.com using Python for stage 2 task"
 HNG_not = HNG
 HNG.split(' ')
 for i in HNG:
