@@ -1,5 +1,9 @@
-def hngi_stage_1():
-    print("Hello World, this is Fidele Kirezi Cyisa with HNGi7 ID HNG-03961 using Python for stage 2 task")
+full_name="Kirezi Cyisa Fidele"
+id="HNG-03961"
+language="Python"
+email="fihacker000@gmail.com"
+def print_function():
+    print("Hello World, this is " + full_name + " with HNGi7 ID " + id + " and email " + email + " using " + language + " for stage 2 task")
 
-if __name__ == '__main__':
-    hngi_stage_1()
+
+print_function()
