@@ -5,9 +5,9 @@ let hngProfile = {
     email: 'barnabee58@gmail.com',
     language: 'Javascript',
     loadProfile : function() {
-        console.log(`Hello World, this is ${this.fullName} with HNGi7 ID ${this.hngId} using ${this.language} and email ${this.email} for stage 2 task`)
+        return 'Hello World, this is ' + this.fullName + ' with HNGi7 ID ' + this.hngId + ' and email ' + this.email + ' using ' + this.language + ' for stage 2 task'
     }
 }
 
 
-hngProfile.loadProfile();
+console.log(hngProfile.loadProfile());
