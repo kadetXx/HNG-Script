@@ -8,6 +8,7 @@ unset($files[0]);
 unset($files[1]);
 $output = [];
 $outputJSON = [];
+$data = [];
 $passes = 0;
 $fails = 0;
 foreach ($files as $file) {
@@ -32,13 +33,17 @@ foreach ($files as $file) {
 
             exec("javac scripts/" . $file);
             break;
+
+        default:
+            $startScript = "php";
+            break;
     }
 
     $f = exec($startScript . " scripts/" . $file);
 
-    $data[$extension[0]]->content = $f;
-    $data[$extension[0]]->status = testFileContent($f);
-    $data[$extension[0]]->name = $extension[0];
+    $data[]->content = $f;
+    $data[]->status = testFileContent($f);
+    $data[]->name = $extension[0];
     $output[] = [$f, testFileContent($f), $extension[0]];
 }
 $outputJSON = $data;
@@ -52,13 +57,13 @@ function testFileContent($string)
     return 'Fail';
 }
 
-foreach ($output as $val) {
-    if ($val[1] == 'Pass') {
-        $passes++;
-    } elseif ($val[1] == 'Fail') {
-        $fails++;
-    }
-}
+//foreach ($output as $val) {
+//    if ($val[1] == 'Pass') {
+//        $passes++;
+//    } elseif ($val[1] == 'Fail') {
+//        $fails++;
+//    }
+//}
 
 if (isset($json) && $json == 'json') {
 
@@ -86,7 +91,7 @@ if (isset($json) && $json == 'json') {
 EOL;
                 flush();
                 ob_flush();
-                sleep(1); //used this to test the buffering
+//                sleep(1); //used this to test the buffering
             }
             ?>
 
