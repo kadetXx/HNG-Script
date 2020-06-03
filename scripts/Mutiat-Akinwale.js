@@ -1,7 +1,7 @@
 stage2 = { 
 	fullName : "Mutiat Akinwale", 
 	hngID: "HNG-01406", 
-	language : "JavaScript" ,
+	language : "Javascript" ,
 	email : "mutiatakinwale@gmail.com"
 	};
 	
