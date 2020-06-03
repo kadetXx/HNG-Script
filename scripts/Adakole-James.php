@@ -1,17 +1,34 @@
 <?php
-
-function showDetailsreal()
+class MyDetailHNG
 {
-    $HngInternId = "HNG-00276";
-    $myfullname = 'Adakole Inalegwu James';
-    $languageOfChoice = 'php';
-    $email = "jambone.james822gmail.com";
+    public $email;
+    public $HngInternId;
+    public $myfullname;
+    public $languageOfChoice;
 
-    echo "Hello World, this is "
-        + $myfullname + " with HNGi7 ID "
-        + $HngInternId + " and email "
-        + $email + " using "
-        + $languageOfChoice + " for stage 2 task";
+    public function showDetails()
+    {
+
+        $string = "Hello World, this is "
+            . $this->myfullname . " with HNGi7 ID "
+            . $this->HngInternId . " and email "
+            . $this->email . " using "
+            . $this->languageOfChoice . " for stage 2 task";
+
+        return $string;
+    }
 }
 
-showDetailsreal();
+$data = new MyDetailHNG;
+
+$data->HngInternId = "HNG-00274";
+$data->myfullname = "Adakole Inalegwu James";
+$data->email = "jambone.james82@gmail.com";
+$data->languageOfChoice = "PHP";
+
+$giveOut = $data->showDetails();
+print $giveOut;
+<<<<<<< HEAD
+=======
+
+>>>>>>> dac1e9caa428174f0a6a7a2382fce62e2be26990
