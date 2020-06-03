@@ -46,13 +46,13 @@ foreach ($files as $file) {
     $regexReturn  = testFileContent($f);
 
     $data[] = [
-            'content' => $newString,
-            'status' => $regexReturn[0],
-            'name' => str_replace('-',' ',$extension[0]),
-            'email' => trim(getEmailFromFileContent($f)),
             'file' => $file,
-            'HNGID' => $regexReturn[1],
-            'language' => $regexReturn[2]
+            'output' => $newString,
+            'name' => str_replace('-',' ',$extension[0]),
+            'id' => $regexReturn[1],
+            'email' => trim(getEmailFromFileContent($f)),
+            'language' => $regexReturn[2],
+            'status' => $regexReturn[0],
         ];
     @$output[] = [$newString, testFileContent($f), str_replace('-',' ',$extension[0]), trim(getEmailFromFileContent($f))];
 }
@@ -83,7 +83,7 @@ foreach ($output as $val) {
 }
 
 if (isset($json) && $json == 'json') {
-
+    header('Content-type: application/json');
     echo json_encode($outputJSON);
 } else {
     ?>
