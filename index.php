@@ -34,7 +34,7 @@ foreach($files as $file){
 }
 
 function testFileContent($string){
-    if(preg_match('/^Hello World, this is (([a-zA-Z]+?\s)+)with HNGi7 ID (HNG-[0-9]{5}) using ([a-zA-Z]+?) for stage 2 task$/',trim($string))){
+    if(preg_match('/^Hello World, this is (([a-zA-Z]+?\s)+) with HNGi7 ID (HNG-[0-9]{5}) using ([a-zA-Z]+?) for stage 2 task$/',trim($string))){
         return true;
     }
 
