@@ -154,7 +154,6 @@ if (isset($json) && $json == 'json') {
                 flush();
                 ob_flush();
 
-                sleep(1); //used this to test the buffering
 
             }
             ?>
