@@ -40,7 +40,7 @@ foreach ($files as $file) {
             break;
     }
 
-    $f = exec($startScript . " scripts/" . $file);
+    $f = @exec($startScript . " scripts/" . $file);
 
     $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
     $regexReturn  = testFileContent($f);
