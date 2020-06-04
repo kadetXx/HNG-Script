@@ -7,7 +7,8 @@ const fullName = "Victory Ndukwu";
 const id = "HNG-01687";
 const lang = "JavaScript";
 // Xyluz gave an update to the task that we include our emails
-const mail = "victoryndukwu7@gmail.com"
+const mail = "victoryndukwu7@gmail.com";
 
 console.log(
-  `Hello World, this is ${fullName} with HNGi7 ID ${id} using ${lang} for stage 2 task. You can reach me via mail at: ${mail}`);
+  `Hello World, this is ${fullName} with HNGi7 ID ${id} and email ${mail} using ${lang} for stage 2 task.`
+);
