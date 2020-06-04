@@ -10,8 +10,6 @@ $files = scandir("scripts/");
 unset($files[0]);
 unset($files[1]);
 unset($files[2]);
-$output = [];
-$outputJSON = [];
 $data = [];
 
 function testFileContent($string)
@@ -65,12 +63,13 @@ if (isset($json) && $json == 'json') {
         $f = @exec($startScript . " scripts/" . $file);
 
 
-        $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
+        $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace(' and email','', $f));
+
         $regexReturn  = testFileContent($f);
 
         $data[] = [
             'file' => $file,
-            'output' => $newString,
+            'output' => htmlspecialchars(trim($newString)),
             'name' => str_replace('-',' ',$extension[0]),
             'id' => $regexReturn[1],
             'email' => trim(getEmailFromFileContent($f)),
@@ -80,7 +79,7 @@ if (isset($json) && $json == 'json') {
 
     }
 
-    echo $outputJSON = json_encode($data);
+    echo json_encode($data);
 
 }else{
     if (ob_get_level() == 0) ob_start();
