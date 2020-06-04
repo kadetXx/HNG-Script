@@ -1,6 +1,6 @@
 
 my_details = {
-    'name': 'Emmanuel Oluwatobi Kelechi',
+    'name': 'Oluwatobi Emmanuel',
     'HNG_ID': 'HNG-02167',
     'Language': 'Python',
     'Email': 'emmanueloluwatobi2000@gmail.com'
