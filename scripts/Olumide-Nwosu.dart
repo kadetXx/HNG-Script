@@ -1,4 +1,14 @@
-void main(){
-   print('Hello world. This is Olumide Nwosu with HNGi7 ID HNG-00325 and email ufedojoatabo@gmail.com using python for stage 2 task');
+void main() {
+   var me = Olumide('Olumide Nwosu', 'HNG-00396', 'Dart', 'niolumi4eva@gmail.com');
+   me.message();
 }
 
+class Olumide{
+  String name, id, language, email;
+
+  Olumide(this.name, this.id, this.language, this.email);
+
+  void message(){
+    print('Hello world. This is ${this.name} with HNGi7 ID ${this.id} and email ${this.email} using ${this.language} for stage 2 task.');
+  }
+}
