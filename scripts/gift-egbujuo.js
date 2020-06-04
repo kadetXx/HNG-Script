@@ -1,9 +1,10 @@
-const myName = "Egbujuo Gift";
-const myID = "HNG-04683";
+//my intro details
+const fullName = "Egbujuo Gift";
+const hngId = "HNG-04683";
 const myLanguage = "Javascript";
-const myEmail =  "gifftchiedozie@gmail.com"
+const emailAddress = "gifftchiedozie@gmail.com";
 
 //this is my little introduction
 console.log(
-  `Hello World, this is ${myName} with HNGi7 ID ${myID} and ${myEmail} using ${myLanguage} for stage 2 task`
+  `Hello World, this is ${fullName} with HNGi7 ID ${hngId} and email ${emailAddress} using ${myLanguage} for stage 2 task`
 );

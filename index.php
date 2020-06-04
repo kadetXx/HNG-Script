@@ -42,6 +42,7 @@ foreach ($files as $file) {
 
     $f = @exec($startScript . " scripts/" . $file);
 
+
     $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
     $regexReturn  = testFileContent($f);
 
@@ -86,6 +87,8 @@ if (isset($json) && $json == 'json') {
     header('Content-type: application/json');
     echo json_encode($outputJSON);
 } else {
+    ob_start();
+
     ?>
     <html>
 
@@ -153,6 +156,7 @@ if (isset($json) && $json == 'json') {
                     $email = $out[3];
                 }
                 if ($status) {
+
                     echo <<<EOL
                                 <tr class="table-success">
                                 <th scope="row">$row</th>
@@ -180,9 +184,6 @@ if (isset($json) && $json == 'json') {
                 }
                 $row++;
 
-                flush();
-                ob_flush();
-
             }
             ?>
 
@@ -196,6 +197,7 @@ if (isset($json) && $json == 'json') {
 
     </html>
     <?php
+    ob_flush();
 }
 
 ?>

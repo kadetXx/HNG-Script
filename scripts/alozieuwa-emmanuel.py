@@ -1,7 +1,12 @@
-#Defining my function and declaration
-def return_string():
-    rebel = "Hello world, this is Alozieuwa Emmanuel C. with HNGi7 ID: HNG-01505 and email emmanuelalozieuwa@gmail.com using the Python language for stage 2 task."
-    return rebel
-
-#my output on your screen or server
-print(return_string())
+def rebel():
+    
+    #Declaring my variables in my function
+    name = "Alozieuwa Emmanuel"
+    my_id = "HNG-01505"
+    email = "emmanuelalozieuwa@gmail.com"
+    lang = "Python"
+    
+    #Printing out my task while inconcatinating my variables
+    print("Hello world, this is " + name + " with HNGi7 ID " + my_id + " and email "+ email + " using " + lang + " for stage 2 task.")
+    
+rebel()
