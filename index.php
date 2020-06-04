@@ -87,7 +87,7 @@ if (isset($json) && $json == 'json') {
     header('Content-type: application/json');
     echo json_encode($outputJSON);
 } else {
-    ob_start();
+    if (ob_get_level() == 0) ob_start();
 
     ?>
     <html>
@@ -184,6 +184,11 @@ if (isset($json) && $json == 'json') {
                 }
                 $row++;
 
+                ob_flush();
+                flush();
+//                sleep(1);
+
+                usleep(30000);
             }
             ?>
 
@@ -197,7 +202,7 @@ if (isset($json) && $json == 'json') {
 
     </html>
     <?php
-    ob_flush();
+
 }
 
 ?>
