@@ -2,9 +2,6 @@
 
 $json = $_SERVER["QUERY_STRING"] ?? '';
 
-$passes = 0;
-$fails = 0;
-
 $files = scandir("scripts/");
 
 unset($files[0]);
@@ -21,6 +18,7 @@ function testFileContent($string)
     return ['fail',null,null];
 }
 
+//todo this can be refactored to capture the email from the testFileContent() -- but leave as is.
 function getEmailFromFileContent($string)
 {
     preg_match('/\s?(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))/i', trim($string) , $matches, PREG_OFFSET_CAPTURE);
@@ -28,8 +26,8 @@ function getEmailFromFileContent($string)
     return @$matches[0][0];
 }
 
-
-if (isset($json) && $json == 'json') {
+//capture the json version
+if (isset($json) && strtolower($json) == 'json') {
     header('Content-type: application/json');
 
     foreach ($files as $file) {
