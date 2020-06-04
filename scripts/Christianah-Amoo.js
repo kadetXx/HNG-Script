@@ -1,6 +1,6 @@
 const fullName = "Christianah Amoo";
 const ID = "HNG-05839";
-const email = "amoochristianah454@gmail.com"
+const email = "amoochristianah454@gmail.com";
 const language = "Javascript";
 
 function intro() {
