@@ -1,5 +1,8 @@
-# This script prints my details for the HNG internship
+def main():
+
+	details = {"names":"Esther Vaati", "id": "HNG-06183", "email": "vaatiesther@gmail.com"}
+
+	print("Hello World, this is " + details["names"]+" with HNGi7 ID " + details["id"] +" and email "+ details["email"]+ " using Python for stage 2 task" )  
 
 
-print("Hello World, this is Esther Vaati with HNGi7 ID HNG-06183 and email vaatiesther@gmail.com using Python for stage 2 task")
-
+main()  
