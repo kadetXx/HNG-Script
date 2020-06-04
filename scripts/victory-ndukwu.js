@@ -10,5 +10,5 @@ const lang = "JavaScript";
 const mail = "victoryndukwu7@gmail.com";
 
 console.log(
-  `Hello World, this is ${fullName} with HNGi7 ID ${id} and email ${mail} using ${lang} for stage 2 task.`
+  `Hello World, this is ${fullName} with HNGi7 ID ${id} and email ${mail} using ${lang} for stage 2 task`
 );
