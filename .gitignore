@@ -2,3 +2,4 @@
 .idea
 .vscode
 .github
+scripts/*.class
