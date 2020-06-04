@@ -1,5 +1,5 @@
 fullname = "Simi Da-Walang"
-HNGid  = "HND-04578"
+HNGid  = "HNG-04578"
 email = "simidawalang@gmail.com"
 lang = "Python"
 
