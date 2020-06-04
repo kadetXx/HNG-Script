@@ -4,7 +4,7 @@ const language = "JavaScript";
 
 
 const hngProfile=()=>{
-    return 'Hello World, this is ${HAFIZ OLUWAPONMILE LAWAL} with ID ${00562} using ${JavaScript} for stage 2 task';
+    return 'Hello World, this is ${HAFIZ OLUWAPONMILE LAWAL} with ID ${00562} and email ${hafizoluwaponmile@gmail.com} using ${JavaScript} for stage 2 task';
 }
 
 console.log(hngProfile());
