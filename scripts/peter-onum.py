@@ -13,7 +13,7 @@ my_dict = {'name': name, 'id': ID, 'language': language, 'email': email}
 
 
 def show_my_details(name, hng_id, language_input, mail):
-    return f"Hello world, this is {name} with HNGi7 ID {hng_id} and email {email} using {language_input} for stage 2 task"
+    return "Hello world, this is {} with HNGi7 ID {} and email {} using {} for stage 2 task".format(name, hng_id, mail, language_input)
 
 
 print(show_my_details(my_dict['name'],
