@@ -1,5 +1,5 @@
 let details = {
-    fullName: 'Iheme Grace',
+    fullName: 'iheme  chioma grace',
     ID: 'HNG-00571',
     email: 'graceiheme@gmail.com',
     language: 'Javascript'
