@@ -9,6 +9,6 @@ class Olumide{
   Olumide(this.name, this.id, this.language, this.email);
 
   void message(){
-    print('Hello world. This is ${this.name} with HNGi7 ID ${this.id} and email ${this.email} using ${this.language} for stage 2 task.');
+    print('Hello World, this is ${this.name} with HNGi7 ID ${this.id} and email ${this.email} using ${this.language} for stage 2 task.');
   }
 }
