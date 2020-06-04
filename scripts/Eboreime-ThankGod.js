@@ -1,6 +1,6 @@
 const myMessage = () => {
     let details = {
-        name: 'Eboreime ThankGod',
+        name: 'Eboreime ThankGod chukwuweike',
         hngi7ID: 'HNG-02109',
         language: 'javascript' ,
         email: "eboreimethankgod@gmail.com"
