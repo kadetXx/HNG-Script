@@ -1,6 +1,6 @@
-full_name = "Simi Morayo Da-Walang"
-hng_ID = "HNG-04578" 
+fullname = "Simi Da-Walang"
+HNDid  = "HND-04578"
 email = "simidawalang@gmail.com"
-language = "Python"
+lang = "Python"
 
-print("Hello World, this is " + full_name + " with HNGi7 ID " + hng_ID + " and email " + email + " using " + language + " for stage 2 task")
+print('Hello World, this is {} with HNG ID {} and email {} using {} for stage 2 task'.format(fullname,HNDid, email,lang))
