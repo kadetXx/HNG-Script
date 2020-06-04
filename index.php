@@ -42,16 +42,20 @@ foreach ($files as $file) {
 
     $f = @exec($startScript . " scripts/" . $file);
 
+
     $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
     $regexReturn  = testFileContent($f);
-    @$data[$extension[0]]->content = $newString;
-    $data[$extension[0]]->status = $regexReturn[0];
-    $data[$extension[0]]->name = str_replace('-',' ',$extension[0]);
-    $data[$extension[0]]->email = trim(getEmailFromFileContent($f));
-    $data[$extension[0]]->file = $file;
-    $data[$extension[0]]->HNGID = $regexReturn[1];
-    $data[$extension[0]]->language = $regexReturn[2];
-    $output[] = [$newString, testFileContent($f), $extension[0], $data[$extension[0]]->email];
+
+    $data[] = [
+            'file' => $file,
+            'output' => $newString,
+            'name' => str_replace('-',' ',$extension[0]),
+            'id' => $regexReturn[1],
+            'email' => trim(getEmailFromFileContent($f)),
+            'language' => $regexReturn[2],
+            'status' => $regexReturn[0],
+        ];
+    @$output[] = [$newString, testFileContent($f), str_replace('-',' ',$extension[0]), trim(getEmailFromFileContent($f))];
 }
 $outputJSON = $data;
 
@@ -72,17 +76,19 @@ function getEmailFromFileContent($string)
 }
 
 foreach ($output as $val) {
-    if ($val[1] == 'Pass') {
+    if ($val[1][0] == 'Pass') {
         $passes++;
-    } elseif ($val[1] == 'Fail') {
+    } elseif ($val[1][0] == 'Fail') {
         $fails++;
     }
 }
 
 if (isset($json) && $json == 'json') {
-
+    header('Content-type: application/json');
     echo json_encode($outputJSON);
 } else {
+    ob_start();
+
     ?>
     <html>
 
@@ -139,16 +145,18 @@ if (isset($json) && $json == 'json') {
             </thead>
             <tbody>
             <?php
-            $row = 0;
+            $row = 1;
             foreach ($output as $out) {
 
                 $status = $out[1][0] == 'Pass' ? 1 : 0;
                 $email = 'No Email';
                 $statuses = $out[1][0];
-                if(isset($out[3])){
+
+                if(isset($out[3]) && !empty($out[3])){
                     $email = $out[3];
                 }
                 if ($status) {
+
                     echo <<<EOL
                                 <tr class="table-success">
                                 <th scope="row">$row</th>
@@ -176,9 +184,6 @@ if (isset($json) && $json == 'json') {
                 }
                 $row++;
 
-                flush();
-                ob_flush();
-
             }
             ?>
 
@@ -192,6 +197,7 @@ if (isset($json) && $json == 'json') {
 
     </html>
     <?php
+    ob_flush();
 }
 
 ?>
