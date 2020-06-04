@@ -1,11 +1,15 @@
 <?php
-$txt1 = "Temitope Japheth";
-$txt2 = "HNG-04757";
-$txt3 = "PHP";
 
-echo " Hello, This is  $txt1  ";
-echo "with HNGi7 ID: $txt2 using ";
-echo $txt3 . " ";
-echo "for stage 2 task" . "<br>";
-echo "Thank you";
-?>
+
+
+$name = "Temitope Japheth";
+
+$id = "HNG-04757";
+
+$language = "PHP";
+
+$email = "japhethtemitope@gmail.com";
+
+print(" Hello world, this is {$name} with HNGi7 ID {$id} and email {$email} using {$language} for stage 2 task ") ;
+
+
