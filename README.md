@@ -1,6 +1,6 @@
 # HNG-SCRIPT:
 
-This script gets all the files in the scripts folder and runs exec on it.
+**This script gets all the files in the scripts folder and runs exec on it, after which it outputs HTML to show a list of passes and failures.**
 
 ## Supported Languages
 
@@ -43,11 +43,15 @@ Visit the link in the browser that look like:
 
 ## NOTE:
 
-Dart programmers must have dart install on the local machine for testing.
+PHP MUST be of version 7.3 and above
+Python MUST be installed v2 preferrably
+Dart must be installed on your server.
+and Java too
+
 
 visit https://dart.dev/get-dart to install dart on your local machine.
 
-PHP must be of version 7.3 and above
+
 
 # RESULT:
 
