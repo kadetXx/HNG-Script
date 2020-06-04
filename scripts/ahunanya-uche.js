@@ -1,3 +1,6 @@
+// Name: Uche Ahunanya
+// Task: Stage 2 task
+
 let FullName = "Uche Ahunanya Blair";
 let ID = "HNG-04756";
 let Email = "thatboywayne95@gmail.com";
