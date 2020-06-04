@@ -1,6 +1,12 @@
 
-name = 'Samuel Bamgbose'
-ID = 'HNG-00339'
-language = 'Python'
+#HNGi7 team task
 
-print('Hello World, this is', name,'with HNGi7 ID',ID,'using',language,'for stage 2 task')
+fullname = "Samuel Bamgbose"
+hid = "HNG-00339"
+dev_language = "Python"
+email = "bsaintdesigns@gmail.com"
+
+def main():
+    print("Hello World, this is " + fullname + " with HNGi7 ID " + hid + " and email " + email + " using " + dev_language + " for stage 2 task")
+
+main()
