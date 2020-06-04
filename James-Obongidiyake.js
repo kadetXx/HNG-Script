@@ -1,0 +1,1 @@
+console.log("Hello World, this is James Obongidiyake Daniel with HNGi7 ID HNG-05689 and email obongidiyake@gmail.com using Javascript for stage 2 task")
