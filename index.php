@@ -4,6 +4,9 @@ $json = $_SERVER["QUERY_STRING"] ?? '';
 
 $files = scandir("scripts/");
 
+//echo json_encode($files);
+//
+//return;
 unset($files[0]);
 unset($files[1]);
 unset($files[2]);
@@ -160,15 +163,16 @@ if (isset($json) && strtolower($json) == 'json') {
                 $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
                 $regexReturn  = testFileContent($f);
 
-                $data[] = [
-                    'file' => $file,
-                    'output' => $newString,
-                    'name' => str_replace('-',' ',$extension[0]),
-                    'id' => $regexReturn[1],
-                    'email' => trim(getEmailFromFileContent($f)),
-                    'language' => $regexReturn[2],
-                    'status' => $regexReturn[0],
-                ];
+//                $data[] = [
+//                    'file' => $file,
+//                    'output' => $newString,
+//                    'name' => str_replace('-',' ',$extension[0]),
+//                    'id' => $regexReturn[1],
+//                    'email' => trim(getEmailFromFileContent($f)),
+//                    'language' => $regexReturn[2],
+//                    'status' => $regexReturn[0],
+//                ];
+
 
                 $testEmailVariable = trim(getEmailFromFileContent($f));
                 $status = testFileContent($f)[0];
