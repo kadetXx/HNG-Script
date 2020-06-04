@@ -8,4 +8,4 @@ const finalOutput = () => {
   return `Hello World, this is ${myDetails.name} with HNGi7 ID ${myDetails.id} and email ${myDetails.email} using ${myDetails.language} for stage 2 task`
 }
 
-console.log(finalutput());
+console.log(finalOutput());
