@@ -2,7 +2,7 @@
 #Varible declaration
 
 Name = "Rebecca Saka"
-Email = "beccaSaka@gmail.com"
+Email = "beccasaka@gmail.com"
 Id = "HNG-05990"
 
 
