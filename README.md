@@ -45,7 +45,7 @@ Visit the link in the browser that look like:
 
 PHP version 7.3 and above MUST be installed,
 Python version 2 and above MUST be installed,
-Dart MUST be installed on your server,
+Dart MUST be installed and
 Java MUST be installed.
 
 visit https://dart.dev/get-dart to install dart on your local machine.
