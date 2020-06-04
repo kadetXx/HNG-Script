@@ -1,12 +1,20 @@
-function MoveToStage2(name, id, language) {
-  (this.name = name), (this.id = id), (this.language = language);
+function MoveToStage2(name, id, email, language) {
   console.log(
-    `Hello World! This is ${name} with HNG ID ${id} using ${language} for stage2 task`
+    "Hello World, this is " +
+      name +
+      " with HNGi7 ID " +
+      id +
+      " and email " +
+      email +
+      " using " +
+      language +
+      " for stage 2 task"
   );
 }
 
-const karen = MoveToStage2(
+MoveToStage2(
   "Efereyan Karen Simisola",
   "HNG-01050",
+  "kimsyefe@gmail.com",
   "Javascript"
 );

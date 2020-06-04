@@ -16,7 +16,7 @@ foreach ($files as $file) {
 
     $extension = explode('.', $file);
 
-    switch ($extension[1]) {
+    switch (@$extension[1]) {
         case 'php':
             $startScript = "php";
             break;
@@ -40,33 +40,50 @@ foreach ($files as $file) {
             break;
     }
 
-    $f = exec($startScript . " scripts/" . $file);
+    $f = @exec($startScript . " scripts/" . $file);
 
-    @$data[$extension[0]]->content = $f;
-    $data[$extension[0]]->status = testFileContent($f);
-    $data[$extension[0]]->name = $extension[0];
-    $output[] = [$f, testFileContent($f), $extension[0]];
+    $newString = str_ireplace(getEmailFromFileContent($f),' ', str_ireplace('and email',' ', $f));
+    $regexReturn  = testFileContent($f);
+
+    $data[] = [
+            'file' => $file,
+            'output' => $newString,
+            'name' => str_replace('-',' ',$extension[0]),
+            'id' => $regexReturn[1],
+            'email' => trim(getEmailFromFileContent($f)),
+            'language' => $regexReturn[2],
+            'status' => $regexReturn[0],
+        ];
+    @$output[] = [$newString, testFileContent($f), str_replace('-',' ',$extension[0]), trim(getEmailFromFileContent($f))];
 }
 $outputJSON = $data;
 
 function testFileContent($string)
 {
-    if (preg_match('/^Hello\sWorld[,|.|!]?\sthis\sis\s[a-zA-Z]{2,}\s[a-zA-Z]{2,}(\s[a-zA-Z]{2,})?\swith\sHNGi7\sID\s(HNG-\d{3,})\susing\s[a-zA-Z|#]{2,}\sfor\sstage\s2\stask.?$/i', trim($string))) {
-        return 'Pass';
+    if (preg_match('/^Hello\sWorld[,|.|!]*\sthis\sis\s([a-zA-Z|-]{2,}\s){1,6}with\sHNGi7\sID\s(HNG-\d{3,})\sand\semail\s{1,3}(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))\s{1,3}using\s([a-zA-Z|#]{2,})\sfor\sstage\s2\stask.?$/i', trim($string), $values)) {
+        return ['Pass',$values[2],$values[7]];
     }
 
-    return 'Fail';
+    return ['Fail',null,null];
+}
+
+function getEmailFromFileContent($string)
+{
+    preg_match('/\s?(([\w+\.\-]+)@([\w+\.\-]+)\.([a-zA-Z]{2,5}))/i', trim($string) , $matches, PREG_OFFSET_CAPTURE);
+
+    return @$matches[0][0];
 }
 
 foreach ($output as $val) {
-    if ($val[1] == 'Pass') {
+    if ($val[1][0] == 'Pass') {
         $passes++;
-    } elseif ($val[1] == 'Fail') {
+    } elseif ($val[1][0] == 'Fail') {
         $fails++;
     }
 }
 
 if (isset($json) && $json == 'json') {
+    header('Content-type: application/json');
     echo json_encode($outputJSON);
 } else {
     ?>
@@ -119,22 +136,32 @@ if (isset($json) && $json == 'json') {
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Message</th>
+                <th scope="col">Email</th>
                 <th scope="col">Status</th>
             </tr>
             </thead>
             <tbody>
             <?php
-            $row = 0;
+            $row = 1;
             foreach ($output as $out) {
 
-                $status = $out[1] == 'Pass' ? 1 : 0;
+                $status = $out[1][0] == 'Pass' ? 1 : 0;
+                $email = 'No Email';
+                $statuses = $out[1][0];
+
+                if(isset($out[3]) && !empty($out[3])){
+                    $email = $out[3];
+                }
                 if ($status) {
                     echo <<<EOL
                                 <tr class="table-success">
                                 <th scope="row">$row</th>
                                 <td><b>$out[2]</b></td>
                                 <td>$out[0]</td>
-                                <td>$out[1] ✅</td>
+                                <td>
+                                    $email
+                                </td>
+                                <td>$statuses ✅</td>
                                 </tr>
                              EOL;
                 }
@@ -144,7 +171,10 @@ if (isset($json) && $json == 'json') {
                                 <th scope="row">$row</th>
                                 <td><b>$out[2]</b></td>
                                 <td>$out[0]</td>
-                                <td>$out[1] ❌</td>
+                                <td>
+                                    $email
+                                </td>
+                                <td>$statuses ❌</td>
                                 </tr>
                             EOL;
                 }
@@ -152,8 +182,6 @@ if (isset($json) && $json == 'json') {
 
                 flush();
                 ob_flush();
-
-                sleep(1); //used this to test the buffering
 
             }
             ?>
