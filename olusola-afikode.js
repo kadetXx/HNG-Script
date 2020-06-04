@@ -6,3 +6,5 @@ const email = "afikodeolaitan@gmail.com";
 const languageUsed = "JavaScript";
 
 const myDetails = `Hello World, this is ${fullName} with HNGi7 ID ${id} and email ${email} using ${languageUsed} for stage 2 task`;
+
+console.log(myDetails);
