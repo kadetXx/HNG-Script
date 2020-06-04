@@ -13,4 +13,4 @@ params = {
 }
 
 if __name__ == "__main__":
-    print("Hello World, this is " + params['name'] + " With HNGi7 ID " + params['ID'] + " and email " + params['email'] +" using " + params['language']+" for stage 2 task")
+    print("Hello World, this is " + params['name'] + " with HNGi7 ID " + params['ID'] + " and email " + params['email'] +" using " + params['language']+" for stage 2 task")
