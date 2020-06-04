@@ -32,8 +32,7 @@ foreach ($files as $file) {
         case 'java':
             $startScript = "java";
 
-            $file = exec("javac scripts/" . $file);
-            var_dump($file);
+            exec("javac scripts/" . $file);
             break;
 
         default:
