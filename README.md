@@ -6,7 +6,7 @@
 
 **Javascript | PHP | Python | Java | Dart**
 
-## TO-RUN:
+## TO-CONTRIBUTE:
 
 ```yaml
 Clone Repo:
