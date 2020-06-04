@@ -10,5 +10,3 @@ const {name, hngID, lang, email} = details
 
 const message = `Hello World, this is ${name} with HNGi7 ID ${hngID} and email ${email} using ${lang} for stage 2 task`;
 console.log(message);
-
-
