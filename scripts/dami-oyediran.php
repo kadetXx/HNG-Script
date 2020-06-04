@@ -1,9 +1,10 @@
 <?php
 $name = 'Victor Damilola Oyediran';
-$id = '00894';
+$id = 'HNG-00894';
 $language = 'PHP';
+$email = 'oyediran.viktor@gmail.com';
 
-$message = "Hello World, this is $name with HNGi7 ID $id using $language for stage 2 task";
+$message = "Hello World, this is $name with HNGi7 ID $id and email $email using $language for stage 2 task";
 
 printMyMessage($message);
 
