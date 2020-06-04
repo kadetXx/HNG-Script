@@ -6,7 +6,7 @@ $backendLang = 'PHP';
 $devEmail = 'devquie@gmail.com';
 
 function stageTask($name, $hngid, $email, $lang) {
-    if ($hngid == 'HNG-02060') {
+    if (isset($email)) {
         return "Hello World, this is {$name} with HNGi7 ID {$hngid} and email {$email} using {$lang} for stage 2 task.";
     }
 }
