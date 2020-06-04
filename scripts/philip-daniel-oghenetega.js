@@ -5,7 +5,5 @@ const person = {
   email: 'oghenetegaphilip@gmail.com'
 }
 const values = `Hello World, this is ${person.name} with HNG ID: ${person.hngID}, and email: ${person.email} using ${person.language} for stage 2 task.`;
-const p = document.createElement('p');
-  p.appendChild(document.createTextNode(values));
-  document.body.appendChild(p);
+
 console.log(values);
