@@ -5,4 +5,4 @@ ID = "HNG-02909"
 devlang = "Python"
 email = "aechealgr8@gmail.com"
 
-print("Hello World, this is " + name + " with HNGi7 ID " + ID + " using " + devlang + " for stage 2 task")
+print("Hello World, this is " + name + " with HNGi7 ID " + ID + " and email " + email + " using " + devlang + " for stage 2 task")
