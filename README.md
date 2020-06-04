@@ -21,6 +21,14 @@ Following this format:
   [surname]-[name].[ext]
 
 Example: ada-musa.js, ade_chika.py
+
+Your intern scripts output must have this format:
+Hello World, this is [FullName] with HNGi7 ID [ID] and email [Email] using [Language] for stage 2 task
+
+For Example:
+Hello World, this is Elisha Simeon Ukpong Udoh with HNGi7 ID HNG-01827 and email simeon.udoh45@gmail.com using python for stage 2 task
+
+FullName supports up to 4 names.
 ```
 
 
