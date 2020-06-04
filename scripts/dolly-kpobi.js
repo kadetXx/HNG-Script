@@ -1,5 +1,5 @@
 let fname = 'Dolly Kpobi';
-let id    = '(HNG-00926)';
+let id    = 'HNG-00926';
 let email = 'dkpobi7@gmail.com';
 let language = 'JavaScript';
 
