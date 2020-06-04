@@ -5,7 +5,7 @@ const myInfo = function(){
     const email = "martinirex@yahoo.co.uk";
     const language = "Javascript";
 
-    const info =  `Hello World, this ${full_name} with HNGi7 ID ${internID} and email ${email} using ${language} for stage 2 task`;
+    const info =  `Hello World, this is ${full_name} with HNGi7 ID ${internID} and email ${email} using ${language} for stage 2 task`;
     console.log(info)
 }
 
