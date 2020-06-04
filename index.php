@@ -31,7 +31,10 @@ function getEmailFromFileContent($string)
 }
 
 
-if (! isset($json)) {
+if (isset($json) && $json == 'json') {
+    header('Content-type: application/json');
+
+}else{
     if (ob_get_level() == 0) ob_start();
 ?>
     <html>
@@ -192,9 +195,6 @@ if (! isset($json)) {
 }
 
 if (isset($json) && $json == 'json') {
-    header('Content-type: application/json');
-    if (ob_get_level() == 0) ob_start();
-
 
     foreach ($files as $file) {
 
@@ -239,14 +239,11 @@ if (isset($json) && $json == 'json') {
             'language' => $regexReturn[2],
             'status' => $regexReturn[0],
         ];
-        echo json_encode($data);
-
-        ob_flush();
-        flush();
+        $outputJSON = $data;
 
     }
 
 
-//    echo json_encode($outputJSON);
+    echo json_encode($outputJSON);
 }
 ?>
