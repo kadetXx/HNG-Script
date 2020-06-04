@@ -1,6 +1,6 @@
 const fullName = "Kolajo Tomike";
 const ID = "HNG-05840";
-const email = "kolajoelizabeth@gmail.com"
+const email = "kolajoelizabeth@gmail.com";
 const language = "Javascript";
 
 function intro() {
