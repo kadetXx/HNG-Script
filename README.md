@@ -22,7 +22,7 @@ Following this format:
 
 Example: ada-musa.js, ade_chika.py
 
-Your intern scripts output must have this format:
+Your intern script output must have this format:
 Hello World, this is [FullName] with HNGi7 ID [ID] and email [Email] using [Language] for stage 2 task
 
 For Example:
