@@ -76,5 +76,5 @@ Example: localhost:8000/?json
 
 **Demo Json**
 <p align="center">
-<img src="Demo-Images/jsonImage.png" height="" width="1280"  alt="jsonView Demo"/>
+<img src="Demo-Images/json-Image.png" height="" width="1280"  alt="jsonView Demo"/>
 </p>
