@@ -1,2 +1,8 @@
 // a javascript code
-console.log('Hello world, my name is Susan Wangari with HNGi7 ID 02129 and email address susanwangari810@gmail.com using javascript for stage 2 project');
+  let firstName = "Susan";
+    let lastName = "Wangari";
+    let id = "HNG-02129";
+    let emailAddress = "susanwangari810@gmail.com";
+    let language = "JavaScript"
+
+console.log('Hello World, this is ' + firstName + " " + lastName + " " + 'with HNGi7 ID ' + id + " " + 'and email ' + emailAddress + " " + 'using' + " " + language + " " + 'for stage 2 task');
