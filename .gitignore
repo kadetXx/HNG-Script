@@ -1,1 +1,5 @@
 .history
+.idea
+.vscode
+.github
+scripts/*.class
