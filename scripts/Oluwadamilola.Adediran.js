@@ -5,7 +5,7 @@ const displayMessage = (hngID, fullName, language) => {
 
 //Mark:- Breaking down the entries required
 const fullName = 'Oluwadamilola Adediran';
-const hngID = "02794";
+const hngID = "HNG-02794";
 const language = "Javascript";
 
 //Mark: - Run
