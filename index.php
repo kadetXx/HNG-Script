@@ -31,7 +31,10 @@ function getEmailFromFileContent($string)
 }
 
 
-if (! isset($json)) {
+if (isset($json) && $json == 'json') {
+    header('Content-type: application/json');
+
+}else{
     if (ob_get_level() == 0) ob_start();
 ?>
     <html>
@@ -60,22 +63,8 @@ if (! isset($json)) {
         </nav>
     </div>
     <div class="container">
-        <div class="row" style="padding: 6em 0" class="text-center">
-            <div class="col-md-4">
-                <button type="button" class="btn">
-                    Submitted <span class="badge badge-primary"><?php echo ($passes + $fails)  ?></span>
-                </button>
-            </div>
-            <div class="col-md-4">
-                <button type="button" class="btn">
-                    Passes <span class="badge badge-success"><?php echo ($passes)  ?></span>
-                </button>
-            </div>
-            <div class="col-md-4">
-                <button type="button" class="btn">
-                    Fails <span class="badge badge-danger"><?php echo ($fails)  ?></span>
-                </button>
-            </div>
+        <div class="row" style="padding: 2em 0" class="text-center">
+
         </div>
         <table class="table table-hover center table-striped">
             <thead class="thead-dark">
@@ -192,9 +181,6 @@ if (! isset($json)) {
 }
 
 if (isset($json) && $json == 'json') {
-    header('Content-type: application/json');
-    if (ob_get_level() == 0) ob_start();
-
 
     foreach ($files as $file) {
 
@@ -239,14 +225,11 @@ if (isset($json) && $json == 'json') {
             'language' => $regexReturn[2],
             'status' => $regexReturn[0],
         ];
-        echo json_encode($data);
-
-        ob_flush();
-        flush();
+        $outputJSON = $data;
 
     }
 
 
-//    echo json_encode($outputJSON);
+    echo json_encode($outputJSON);
 }
 ?>
