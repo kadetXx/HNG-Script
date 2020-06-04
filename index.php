@@ -154,6 +154,7 @@ if (isset($json) && $json == 'json') {
                     $email = $out[3];
                 }
                 if ($status) {
+
                     echo <<<EOL
                                 <tr class="table-success">
                                 <th scope="row">$row</th>
@@ -180,7 +181,6 @@ if (isset($json) && $json == 'json') {
                             EOL;
                 }
                 $row++;
-
                 flush();
                 ob_flush();
 
