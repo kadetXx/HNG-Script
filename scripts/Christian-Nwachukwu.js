@@ -1,15 +1,11 @@
-//Full Name
+//Full Name, Intern ID, Email and Programming language 
+
 const fname = 'Christian Nwachukwu';
 
-//Intern ID
 const id = '00941';
 
-//Email
 const email = 'christian.nwachukwu2020@gmail.com';
 
-//Programming Language
-const lang = 'Node.js';
+const lang = 'Javascript';
 
-console.log(`Hello World, this is ${fname} with 
-            \nHNGi7 ID ${id} and email: ${email} using 
-            \n${lang} for stage 2 task.`);
+console.log(`Hello World, this is ${fname} with HNGi7 ID ${id} and email ${email} using ${lang} for stage 2 task.`);
