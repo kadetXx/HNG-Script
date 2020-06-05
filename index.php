@@ -104,7 +104,7 @@ if (isset($json) && strtolower($json) == 'json') {
                     Leader: <span class="btn btn-sm btn btn-outline-primary">@Kadet</span>
                 </small> &nbsp;
                 <small>
-                    FrontEnd: <span class="btn btn-sm btn btn-outline-success">@desola</span>
+                    BackEnd: <span class="btn btn-sm btn btn-outline-success">@desola</span>
                 </small> &nbsp;
                 <small>
                     DevOps: <span class="btn btn-sm btn btn-outline-info">@geofferyj</span>
