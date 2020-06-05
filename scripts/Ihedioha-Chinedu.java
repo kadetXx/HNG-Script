@@ -7,7 +7,7 @@ public class Chinex{
         String mailAddress = "ihediohachinedu21@gmail.com";
         
         
-        System.out.println("Hello World, this is " + internName + " with HNGi7 ID " + internIdNumber + " and email " + mailAddress + " using Java for stage 2 task ");
+        System.out.println("Hello World, this is " + internName + " with HNGi7 ID " + internIdNumber + " and email " + mailAddress + " using Java for stage 2 task");
     
     }
 }
