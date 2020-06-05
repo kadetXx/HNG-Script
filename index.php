@@ -43,7 +43,7 @@ if (isset($json) && strtolower($json) == 'json') {
                 $startScript = "node";
                 break;
             case 'py':
-                $startScript = "python";
+                $startScript = "python3";
                 break;
             case 'dart':
                 $startScript = "dart";
@@ -158,7 +158,7 @@ if (isset($json) && strtolower($json) == 'json') {
                         $startScript = "node";
                         break;
                     case 'py':
-                        $startScript = "python";
+                        $startScript = "python3";
                         break;
                     case 'dart':
                         $startScript = "dart";
