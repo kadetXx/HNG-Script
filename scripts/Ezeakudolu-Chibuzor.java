@@ -1,4 +1,4 @@
-class EzeakudoluChibuzor{
+class Ezeakudolu-Chibuzor{
 
     public static void main(String[] args) {
         String name = "Chibuzor Ezeakudolu Stanley";
