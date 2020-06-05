@@ -1,4 +1,4 @@
-public class Chinex{
+public class Ihedioha-Chinedu{
     
     public static void main(String[]args){
     
