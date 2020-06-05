@@ -10,6 +10,5 @@ while True:
     HNGi7_ID= "HNG-03087"
     Language= "Python"
     Email= "mattadeyemi15r@gmail.com"
-    print("Hello World, this is",Full_Name, "with HNGi7 ID", HNGi7_ID,"and email",Email, "using",Language, "for stage 2 task.")
-
+    print("Hello World,this is",Full_Name,"with HNGi7 ID",HNGi7_ID,'and email',Email,'using',Language,'for stage 2 task')
     break
