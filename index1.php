@@ -9,7 +9,6 @@ unset($files[0]);
 unset($files[1]);
 unset($files[2]);
 $data = [];
-// $complete_data = array();
 
 function testFileContent($string)
 {
@@ -27,7 +26,11 @@ function getEmailFromFileContent($string)
 
     return @$matches[0][0];
 }
-if (isset($json) && strtolower($json) == 'json&page=1' || strtolower($json) == 'json&page=2' || strtolower($json) == 'json&page=3' || strtolower($json) == 'json&page=4'  || strtolower($json) == 'json&page=5' || strtolower($json) == 'json&page=6' || strtolower($json) == 'json&page=7' || strtolower($json) == 'json&page=8' || strtolower($json) == 'json') {
+
+//capture the json version
+if (isset($json) && strtolower($json) == 'json') {
+    header('Content-type: application/json');
+
     foreach ($files as $file) {
 
         $extension = explode('.', $file);
@@ -63,58 +66,21 @@ if (isset($json) && strtolower($json) == 'json&page=1' || strtolower($json) == '
 
         $regexReturn  = testFileContent($f);
 
-    $data[] = [
-        'file' => $file,
-        'output' => htmlspecialchars(trim($newString)),
-        'name' => str_replace('-',' ',$extension[0]),
-        'id' => $regexReturn[1],
-        'email' => trim(getEmailFromFileContent($f)),
-        'language' => $regexReturn[2],
-        'status' => $regexReturn[0],
-    ];
-    // $complete_data+=$data;
-}
-}
-else{
-    echo "404 NotFound";
-}
+        $data[] = [
+            'file' => $file,
+            'output' => htmlspecialchars(trim($newString)),
+            'name' => str_replace('-',' ',$extension[0]),
+            'id' => $regexReturn[1],
+            'email' => trim(getEmailFromFileContent($f)),
+            'language' => $regexReturn[2],
+            'status' => $regexReturn[0],
+        ];
 
-$pieces = array_chunk($data, ceil(count($data) / 5));
-//capture the json version
-if (isset($json) && strtolower($json) == 'json&page=1') {
-    header('Content-type: application/json');
-         echo json_encode($pieces[0]);
     }
-else if (isset($json) && strtolower($json) == 'json&page=2') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[1]);
-}else if (isset($json) && strtolower($json) == 'json&page=3') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[2]);
-}else if (isset($json) && strtolower($json) == 'json&page=4') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[3]);
-}else if (isset($json) && strtolower($json) == 'json&page=5') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[4]);
-}else if (isset($json) && strtolower($json) == 'json&page=6') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[5]);
-}else if (isset($json) && strtolower($json) == 'json&page=7') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[6]);
-}else if (isset($json) && strtolower($json) == 'json&page=7') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[6]);
-}else if (isset($json) && strtolower($json) == 'json&page=8') {
-     header('Content-type: application/json');
-         echo json_encode($pieces[7]);
-}
-else if (isset($json) && strtolower($json) == 'json') {
-     header('Content-type: application/json');
-         echo json_encode($data);
-}
-else{
+
+    echo json_encode($data);
+
+}else{
     if (ob_get_level() == 0) ob_start();
     ?>
     <html>
@@ -138,7 +104,7 @@ else{
                     Leader: <span class="btn btn-sm btn btn-outline-primary">@Kadet</span>
                 </small> &nbsp;
                 <small>
-                    FrontEnd: <span class="btn btn-sm btn btn-outline-success">@desola</span>
+                    BackEnd: <span class="btn btn-sm btn btn-outline-success">@desola</span>
                 </small> &nbsp;
                 <small>
                     DevOps: <span class="btn btn-sm btn btn-outline-info">@geofferyj</span>
