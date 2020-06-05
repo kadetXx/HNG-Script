@@ -2,9 +2,7 @@
 
 function myDetails(fname, id, email, lang) {
 
-    console.log(`Hello World, this is ${fname} 
-                \nwith HNGi7 ID ${id} and email: ${email} 
-                \nusing ${lang} for stage 2 task.`);
+    console.log(`Hello World, this is ${fname} with HNGi7 ID ${id} and email ${email} using ${lang} for stage 2 task.`);
     
 }
 
