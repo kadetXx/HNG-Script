@@ -5,4 +5,4 @@
     let emailAddress = "susanwangari810@gmail.com";
     let language = "JavaScript"
 
-console.log('Hello World, " " this is ' + firstName + " " + lastName + " " + 'with HNGi7 ID ' + id + " " + 'and email ' + emailAddress + " " + 'using' + " " + language + " " + 'for stage 2 task');
+console.log('Hello World, this is ' + firstName + " " + lastName + " " + 'with HNGi7 ID ' + id + " " + 'and email ' + emailAddress + " " + 'using' + " " + language + " " + 'for stage 2 task');
