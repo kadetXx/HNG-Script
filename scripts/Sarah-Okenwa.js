@@ -1,7 +1,7 @@
-var myFullName = "Sarah  Okenwa";
-var myHNGID = "HNG-02812";
-var languageUsed = "JavaScript";
-var myEmailAddress = "sarahokenwa@gmail.com";
-var expectedMessage = `Hello World, this is ${myFullName} with HNGi7 ID ${myHNGID} and email ${myEmailAddress} using ${languageUsed} for stage 2 task`;
+function hng(name, id, language, email) {
+  console.log(
+    `Hello World, this is ${name} with HNGi7 ID ${id} and email ${email} using ${language} for stage 2 task`
+  );
+}
 
-console.log(expectedMessage);
+hng("Sarah Okenwa", "HNG-02812", "JavaScript", "sarahokenwa@gmail.com");
