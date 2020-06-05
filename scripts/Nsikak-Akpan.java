@@ -1,9 +1,9 @@
-public class NsikakAkpan {
-    public static void main(String[] args) {
-        System.out.println(
-                "Hello World, this is Nsikak Akpan with HNGi7 ID HNG-01250 and email tonyalex6258@gmail.com using java for stage 2 task");
-    }
-}
+def HNG():
+    fullname="NsikakAkpan"
+    ID="HNG0-1250"
+    language="Python"
+    print("Hello World, this is %s with HNGi7 ID %s using %s for stage 2 task" %(fullname, ID, language))
+HNG()`
 
 
 
