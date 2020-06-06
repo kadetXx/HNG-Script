@@ -1,6 +1,6 @@
 const user = {
   fullname: "Tola Shobowale",
-  id: "HNG 00272",
+  id: "HNG-00272",
   language: "Javascript",
   email: "shobowaletola@gmail.com",
 };
