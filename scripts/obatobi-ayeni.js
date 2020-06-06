@@ -1,10 +1,4 @@
 //constructor
-function Info(name, id, email, language){
-    this.yourName=name;
-    this.yourId=id;
-    this.yourEmail=email;
-    this.yourLanguage=language;
-}
 
 let myName="Obatobi Ayeni";
 let myId="HNG-04196";
