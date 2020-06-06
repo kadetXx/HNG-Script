@@ -1,4 +1,4 @@
-var name = "Emmanuel abutu";
+var name = "Emmanuel Abutu";
 var ID = "HNG-03705";
 var language = "Javascript";
 var email = "abutue10@gmail.com";
