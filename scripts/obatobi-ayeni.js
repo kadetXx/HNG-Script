@@ -9,5 +9,4 @@ function output(){
     console.log('Hello World, this is ' + myName + ' with HNGi7 ID ' + myId + ' and email ' + myEmail + ' using ' + myLanguage + ' for stage 2 task');
 }
 
-let info=new Info(myName, myId, myEmail, myLanguage);
 output();
