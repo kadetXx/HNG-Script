@@ -1,1 +1,4 @@
-Console.log('Hello World, this is Ayoola Fashina with HNGi7 ID HNG-00975 and email ayoolafashina@gmail.com using Javascript for stage 2 task');
+function stage2(firstname, lastname, email){
+    console.log('Hello World, this is '  +  firstname + ' '  + lastname  +  ' with HNGi7 ID HNG-00975 and email ' + email + ' using javascript for stage 2 task');
+   }
+  stage2('Ayoola', 'Fashina', 'ayoolafashina@gmail.com');
