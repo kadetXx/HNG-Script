@@ -1,4 +1,10 @@
-#-*-coding:utf8;-*-
-#qpy:3
-#qpy:console
-print("Hello World, this is Elijah Edun with HNGi7 ID HNG-02781 using python for stage 2 task")
+#Name: Elijah Edun
+#Task: HNG Task for stage 2
+
+name = "Elijah Edun"
+hngid = "HNG-02781"
+email = "edunelijah18@gmail.com"
+language = "python"
+
+print("Hello World, this is " + name + " with HNGi7 ID " + hngid + " and email " + email + " using " + language + " for stage 2 task")
+

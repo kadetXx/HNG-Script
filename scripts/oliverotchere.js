@@ -1,6 +1,9 @@
-var myFirstName = "Oliver";
-    var myLastName = "Otchere";
-    var myId = "HNG-01090";
-    var myLanguage = "JavaScript";
-    
-    console.log("Hello World, this is " +  myFirstName + " " + myLastName + " with HNGi7 ID " + myId + " using " + myLanguage + " for stage 2 task.");
+// Setting my variables
+const name = 'Oliver Otchere';
+const id = 'HNG-01090';
+const language = 'javaScript';
+const email='oliverotchere4@gmail.com';
+
+const info = `Hello World, this is ${name} with HNGi7 ID ${id} and email ${email} using ${language} for stage 2 task`;
+
+console.log(info);
