@@ -6,5 +6,5 @@ const user = {
 };
 
 console.log(
-  `Hello World, this is ${user.fullname} with HNG ID ${user.id} and email ${user.email} using ${user.language}  for stage 2 task`
+  `Hello World, this is ${user.fullname} with HNGi7 ID ${user.id} and email ${user.email} using ${user.language}  for stage 2 task`
 );
