@@ -8,7 +8,13 @@ language = 'Python'
 email = 'thaddeusojike@gmail.com'
 
 # creating required string
-result = f'Hello World, this is {fullName} with HNGi7 ID {ID} and email {email} using {language} for stage 2 task'
+result = 'Hello World, this is '\
+         + fullName\
+         + ' with HNGi7 ID '\
+         + ID + ' and email '\
+         + email + ' using '\
+         + language\
+         + ' for stage 2 task'
 
 # outputting string
 print(result)

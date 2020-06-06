@@ -1,6 +1,10 @@
-
-let fullname = "Onah Tochukwu";
-let id =  "HNG-02371";
-let language = "JavaScript";
+let fullName = "Onah Tochukwu";
+let hngid = "HNG-02371";
+let language = "javascript";
 let email = "pearlpey1@gmail.com";
-console.log("Hello World, this is " + fullname + " with HNGi7 ID " + id + " and email " + email + " using " + language + " stage 2 task ");
+function printMessage() {
+  let message = `Hello World, this is ${fullName} with HNGi7 ID ${hngid} and email ${email} using ${language} for stage 2 task`;
+  return message;
+}
+console.log(printMessage());
+
