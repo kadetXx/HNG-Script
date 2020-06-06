@@ -17,7 +17,7 @@ var myInfo = class
 
 	displayInfo() 
 	{
-		console.log(`Hello World, This is ${this.myName} with HNGI7 ID ${this.myId}, and Email ${this.myEmail}, using ${this.pLanguage} for stage two task.`)
+		console.log(`Hello World, This is ${this.myName} with HNGI7 ID ${this.myId} and email ${this.myEmail} using ${this.pLanguage} for stage 2 task`)
 	}
 
 }
