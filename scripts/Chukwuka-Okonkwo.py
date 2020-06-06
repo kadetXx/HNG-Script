@@ -1,1 +1,5 @@
-print("Hello World, this is Chukwuka Okonkwo David with HNGi7 HNG-01486 and email okonkwochukwuka56@gmail.com using python for stage 2 task")
+fullName = "Chukwuka Okonkwo David"
+Id = "HNG-01486"
+email = "okonkwochukwuka56@gmail.com"
+language = "python"
+print("Hello World, this is " + fullName + " with HNGi7 ID " + Id + " and email " + email + " using " + language + " for stage 2 task")
