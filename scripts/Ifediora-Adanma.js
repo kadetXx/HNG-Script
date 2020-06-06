@@ -4,5 +4,5 @@ const Profile ={
     email: 'judith.ifediora@gmail.com',
     language: 'Javascript'
 };
-console.log(`Hello World,this is ${Profile.name} with HNGi7 ID ${Profile .id} and email ${profile.email} using ${Profile.language} for stage 2 task
+console.log(`Hello World, this is ${Profile.name} with HNGi7 ID ${Profile .id} and email ${Profile.email} using ${Profile.language} for stage 2 task
 `)
