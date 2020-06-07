@@ -1,1 +1,0 @@
-console.log("Hello World, this is Chukwuemeka Chemazu with HNGi7 ID HNG-04786 using javascript for stage 2 task")
